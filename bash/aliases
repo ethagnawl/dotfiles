@@ -1,0 +1,83 @@
+alias nh='nautilus .'
+
+alias cddf='cd ~/bin/dotfiles/'
+alias cdw='cd /var/www'
+alias cdpc='cd /var/www/picscliq/picscliq'
+alias cdpdb='cd /var/www/PocketOfferBusiness/PocketOffer.Web.BusinessSite'
+alias cdd='cd /home/pete/Desktop'
+
+function fif {
+    grep -lir "$*" *    
+}
+
+function fifp {
+    grep -RnisI "$*" *    
+}
+
+function count_lines {
+    find *"$*" -print0 | xargs -0 wc -l    
+}
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+parse_git_branch_fancy() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[git:\1]/'
+}
+
+function gaa {
+    git add .
+}
+
+function ga {
+    git add "$*"        
+}
+
+function gcommit {
+    git commit -m "$*"
+}
+
+function gaac {
+    gaa && gcommit "$*"    
+}
+
+function gamend {
+    git commit -m "$*" --amend
+}
+
+function gco {
+    git checkout "$*"    
+}
+
+function gri {
+    git rebase -i HEAD~$1    
+}
+
+function gcob {
+    git checkout $1    
+}
+
+function gdbl {
+    git branch -d $1    
+}
+
+function gdbr {
+    git push origin :$1    
+}
+
+function gpoc {    
+    git push origin $(parse_git_branch)
+}
+
+function gsa {
+    git stash apply stash@{$1}    
+}
+
+alias gpom='git push origin master'
+#alias gpoc="git push origin $(parse_git_branch)"
+alias gs='git status'
+alias gl='git log'
+alias gcom='git checkout master'
+alias gb='git branch'
+alias gsl='git stash list'
