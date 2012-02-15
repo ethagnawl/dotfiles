@@ -61,7 +61,7 @@ function gcob {
 }
 
 function gdbl {
-    git branch -d $1    
+    git branch -D $1
 }
 
 function gdbr {
