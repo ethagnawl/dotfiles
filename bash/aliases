@@ -77,7 +77,6 @@ function gsa {
 }
 
 alias gpom='git push origin master'
-#alias gpoc="git push origin $(parse_git_branch)"
 alias gs='git status'
 alias gl='git log'
 alias gcom='git checkout master'
