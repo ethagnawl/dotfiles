@@ -85,5 +85,6 @@ alias gbr='git branch -r'
 alias gsl='git stash list'
 alias gdcs='git checkout -- *'
 alias gss='git stash save'
+alias bbrew='bundle exec rake barista:brew'
 
 alias vimt='vim -c "NERDTree" $1'
