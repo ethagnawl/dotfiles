@@ -7,6 +7,7 @@ alias cdw='cd /var/www'
 alias cdpc='cd /var/www/picscliq/picscliq'
 alias cdpdb='cd /var/www/PocketOfferBusiness/PocketOffer.Web.BusinessSite'
 alias cdd='cd /home/pete/Desktop'
+alias countf='ls -1r | wc -l'
 
 function fif {
     grep -lir "$*" *    
