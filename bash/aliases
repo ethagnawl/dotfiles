@@ -73,6 +73,10 @@ function gpoc {
     git push origin $(parse_git_branch)
 }
 
+function gpuc {
+    git push upstream $(parse_git_branch)
+}
+
 function gsa {
     git stash apply stash@{$1}    
 }
