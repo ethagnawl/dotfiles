@@ -118,7 +118,7 @@ alias bbrew='bundle exec rake barista:brew'
 alias deployms='bundle exec rake deploy:staging[+]'
 alias jasb='bundle exec rake jasmine'
 alias jasc='bundle exec rake jasmine:ci'
-aliaspbc='pbcopy'
+alias pbc='pbcopy'
 
 alias vimt='vim -c "NERDTree" $1'
 
