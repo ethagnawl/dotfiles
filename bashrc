@@ -1,5 +1,5 @@
 . ~/bin/dotfiles/bash/env
-. ~/bin/dotfiles/bash/config
+. ~/dotfiles/bash/config
 . ~/bin/dotfiles/bash/aliases
 
 # ~/.bashrc: executed by bash(1) for non-login shells.

@@ -1,6 +1,11 @@
-alias nh='nautilus .'
+export EDITOR='vim'
 
-alias node="env NODE_NO_READLINE=1 rlwrap node"
+export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
+
+# current git branch
+alias cb="git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'"
+
+alias nh='nautilus .'
 
 alias cddf='cd ~/bin/dotfiles/'
 alias cdw='cd /var/www'
@@ -8,17 +13,18 @@ alias cdpc='cd /var/www/picscliq/picscliq'
 alias cdpdb='cd /var/www/PocketOfferBusiness/PocketOffer.Web.BusinessSite'
 alias cdd='cd /home/pete/Desktop'
 alias countf='ls -1r | wc -l'
+alias cdsize='du -ch | grep total'
 
 function fif {
-    grep -lir "$*" *    
+    grep -lir "$*" *
 }
 
 function fifp {
-    grep -RnisI "$*" *    
+    grep -RnisI "$*" *
 }
 
 function count_lines {
-    find *"$*" -print0 | xargs -0 wc -l    
+    find *"$*" -print0 | xargs -0 wc -l
 }
 
 parse_git_branch() {
@@ -34,7 +40,7 @@ function gaa {
 }
 
 function ga {
-    git add "$*"        
+    git add "$*"
 }
 
 function gcommit {
@@ -42,7 +48,7 @@ function gcommit {
 }
 
 function gaac {
-    gaa && gcommit "$*"    
+    gaa && gcommit "$*"
 }
 
 function gamend {
@@ -50,15 +56,15 @@ function gamend {
 }
 
 function gco {
-    git checkout "$*"    
+    git checkout "$*"
 }
 
 function gri {
-    git rebase -i HEAD~$1    
+    git rebase -i HEAD~$1
 }
 
 function gcob {
-    git checkout $1    
+    git checkout $1
 }
 
 function gdbl {
@@ -66,10 +72,10 @@ function gdbl {
 }
 
 function gdbr {
-    git push origin :$1    
+    git push origin :$1
 }
 
-function gpoc {    
+function gpoc {
     git push origin $(parse_git_branch)
 }
 
@@ -78,18 +84,39 @@ function gpuc {
 }
 
 function gsa {
-    git stash apply stash@{$1}    
+    git stash apply stash@{$1}
+}
+
+function grs {
+    git reset --soft $1
+}
+
+function grh {
+    git reset --hard $1
+}
+
+
+function gl {
+    git log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+}
+
+function cbp {
+    cb | pbcopy
 }
 
 alias gpom='git push origin master'
 alias gs='git status'
-alias gl='git log'
 alias gcom='git checkout master'
 alias gb='git branch'
 alias gbr='git branch -r'
 alias gsl='git stash list'
-alias gdcs='git checkout -- *'
+alias gdcs='git checkout -- .'
 alias gss='git stash save'
 alias bbrew='bundle exec rake barista:brew'
+alias deployms='bundle exec rake deploy:staging[+]'
+alias jasb='bundle exec rake jasmine'
+alias jasc='bundle exec rake jasmine:ci'
+aliaspbc='pbcopy'
 
 alias vimt='vim -c "NERDTree" $1'
+

@@ -64,3 +64,40 @@ nnoremap <C-n> :call NumberToggle()<cr>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
+
+" disable auto-formatting when pasting from
+" system clipboard
+nnoremap <C-p> :set invpaste paste?<CR>
+set pastetoggle=<C-p>
+set showmode
+
+" load bashrc
+set shellcmdflag=-ic
+
+" Jump to start and end of line using the home row keys
+noremap H ^
+noremap L $
+
+" Search and replace word under cursor (,;)
+nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
+
+" kill beep
+set vb t_vb=".
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CUSTOM AUTOCMDS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup vimrcEx
+  " Clear all autocmds in the group
+  autocmd!
+  autocmd FileType text setlocal textwidth=78
+  " Jump to last cursor position unless it's invalid or in an event handler
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  "for ruby, autoindent with two spaces, always expand tabs
+  autocmd FileType ruby,haml,eruby,yaml,html,cucumber set ai sw=2 sts=2 et
+  autocmd FileType python,javascript,coffee,sass,css set sw=4 sts=4 et
+augroup END
