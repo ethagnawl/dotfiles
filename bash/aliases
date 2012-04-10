@@ -9,8 +9,6 @@ alias nh='nautilus .'
 
 alias cddf='cd ~/bin/dotfiles/'
 alias cdw='cd /var/www'
-alias cdpc='cd /var/www/picscliq/picscliq'
-alias cdpdb='cd /var/www/PocketOfferBusiness/PocketOffer.Web.BusinessSite'
 alias cdd='cd ~/Desktop'
 alias countf='ls -1r | wc -l'
 alias cdsize='du -ch | grep total'
