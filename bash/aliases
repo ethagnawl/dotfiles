@@ -13,6 +13,8 @@ alias cdd='cd ~/Desktop'
 
 # count files in . (non-recursive)
 alias countf='ls -1r | wc -l'
+
+# sum size of files in . -r (MB)
 alias cdsize='du -ch | grep total'
 
 function fif {
