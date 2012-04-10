@@ -10,6 +10,8 @@ alias nh='nautilus .'
 alias cddf='cd ~/bin/dotfiles/'
 alias cdw='cd /var/www'
 alias cdd='cd ~/Desktop'
+
+# count files in . (non-recursive)
 alias countf='ls -1r | wc -l'
 alias cdsize='du -ch | grep total'
 
