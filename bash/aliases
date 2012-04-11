@@ -106,8 +106,8 @@ function cbp {
     cb | pbcopy
 }
 
-alias gpom='git push origin master'
 alias gs='git status'
+alias gpom='git push origin master'
 alias gcom='git checkout master'
 alias gb='git branch'
 alias gbr='git branch -r'
