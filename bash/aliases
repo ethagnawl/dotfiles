@@ -106,6 +106,10 @@ function cbp {
     cb | pbcopy
 }
 
+function ts {
+    termup start $1
+}
+
 alias gs='git status'
 alias gpom='git push origin master'
 alias gcom='git checkout master'
