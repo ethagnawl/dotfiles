@@ -66,10 +66,6 @@ function gri {
     git rebase -i HEAD~$1
 }
 
-function gcob {
-    git checkout $1
-}
-
 function gdbl {
     git branch -D $1
 }
