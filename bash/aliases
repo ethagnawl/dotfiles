@@ -130,6 +130,7 @@ alias gbr='git branch -r'
 alias gsl='git stash list'
 alias gss='git stash save'
 alias gdcs='git checkout -- .'
+alias gh="git rev-parse HEAD"
 alias bbrew='bundle exec rake barista:brew'
 alias deployms='bundle exec rake deploy:staging[+]'
 alias deploymb='bundle exec rake deploy:beta[+]'
