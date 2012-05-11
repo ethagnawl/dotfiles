@@ -117,6 +117,10 @@ function ts {
     termup start $1
 }
 
+function be {
+    bundle exec "$*"
+}
+
 alias v='vim'
 alias gs='git status'
 alias gpom='git push origin master'
