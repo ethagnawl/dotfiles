@@ -102,13 +102,8 @@ function grh {
     git reset --hard $1
 }
 
-
 function gl {
     git log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
-}
-
-function cbp {
-    cb | pbcopy
 }
 
 function ts {
@@ -144,3 +139,7 @@ alias bi='bundle install'
 alias bu='bundle update'
 alias pbc='pbcopy'
 alias scd='python -m SimpleHTTPServer'
+
+function gcbpbc {
+  gcb | pbcopy
+}
