@@ -7,12 +7,10 @@ if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
 
+
 export EDITOR='vim'
 
 export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
-
-# current git branch
-alias cb="git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'"
 
 alias nh='nautilus .'
 alias fh='open .'
@@ -122,6 +120,7 @@ function be {
 }
 
 alias v='vim'
+alias gcb="git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'"
 alias gs='git status'
 alias gpom='git push origin master'
 alias gcom='git checkout master'
