@@ -153,6 +153,7 @@ alias bu='bundle update'
 alias pbc='pbcopy'
 alias scd='python -m SimpleHTTPServer'
 alias irbs='irb --simple-prompt'
+alias rc='pry'
 
 function gcbpbc {
   gcb | pbcopy
