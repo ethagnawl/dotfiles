@@ -20,8 +20,20 @@ alias cdw='cd /var/www'
 alias cdd='cd ~/Desktop'
 alias cdh='cd --'
 
-# count files in . (non-recursive)
-alias countf='ls -1r | wc -l'
+# list only files
+alias lf="ls -l | egrep -v '^d'"
+
+# list only dirs
+alias ldir="ls -l | egrep '^d'"
+
+# count files in . (pass -r for recursive)
+function countfs {
+  if [ "$1" == '-r' ]; then
+    find . -type f | wc -l
+  else
+    ls -1r | wc -l
+  fi
+}
 
 # sum size of files in . -r (MB)
 alias cdsize='du -ch | grep total'
