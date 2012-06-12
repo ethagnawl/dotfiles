@@ -143,7 +143,16 @@ alias deployms='bundle exec rake deploy:staging[+]'
 alias deploymb='bundle exec rake deploy:beta[+]'
 alias jasb='bundle exec rake jasmine'
 alias jasc='bundle exec rake jasmine:ci'
-alias rs='bundle exec rspec spec'
+
+# run rspec suite or spec
+function rs {
+  if [ $# == 0 ]; then
+    bundle exec rspec spec
+  else
+    bundle exec rspec $1
+  fi
+}
+
 alias rdm='echo "rake db:migrate" && bundle exec rake db:migrate'
 alias rdp='echo "rake db:test:prepare" && bundle exec rake db:test:prepare'
 alias rdmp='rdm && rdp'
