@@ -116,7 +116,6 @@ export PS1="\[\033[00m\]\u@\h\[\033[01;34m\] \w \[\033[31m\]\$(parse_git_branch_
 fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-~/.local/bin/bashmarks.sh
 set -o vi
 
 alias g='git'
