@@ -4,6 +4,9 @@ call pathogen#helptags()
 filetype plugin indent on
 :set number
 set showcmd
+set nocompatible
+set encoding=utf-8
+set colorcolumn=85
 
 " Who doesn't like autoindent?
 set autoindent
