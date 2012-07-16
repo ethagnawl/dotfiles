@@ -1,6 +1,6 @@
-. ~/bin/dotfiles/bash/env
+. ~/dotfiles/bash/env
 . ~/dotfiles/bash/config
-. ~/bin/dotfiles/bash/aliases
+. ~/dotfiles/bash/aliases
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
