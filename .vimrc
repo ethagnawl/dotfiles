@@ -105,3 +105,4 @@ augroup vimrcEx
   autocmd FileType ruby,haml,eruby,yaml,html,cucumber set ai sw=2 sts=2 et
   autocmd FileType python,javascript,coffee,sass,css,scss set sw=4 sts=4 et
 augroup END
+colorscheme gummy_bears
