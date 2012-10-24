@@ -22,6 +22,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 set expandtab
 set smarttab
 
+" Add _ as a word separator
+:set iskeyword-=_
+
 " Who wants an 8 character tab?  Not me!
 set shiftwidth=2
 set softtabstop=2
