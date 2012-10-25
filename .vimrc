@@ -25,6 +25,9 @@ set smarttab
 " Add _ as a word separator
 :set iskeyword-=_
 
+" W aliases w
+:command W w
+
 " Who wants an 8 character tab?  Not me!
 set shiftwidth=2
 set softtabstop=2
