@@ -14,11 +14,17 @@ export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
 
 alias nh='nautilus .'
 alias fh='open .'
+alias gtest='ping google.com'
 
 alias cddf='cd ~/bin/dotfiles/'
 alias cdw='cd /var/www'
 alias cdd='cd ~/Desktop'
 alias cdh='cd --'
+
+# reverse cat
+function tac {
+  tail -r $1
+}
 
 # list only files
 alias lf="ls -l | egrep -v '^d'"
