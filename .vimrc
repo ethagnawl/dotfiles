@@ -112,3 +112,5 @@ augroup vimrcEx
   autocmd FileType python,javascript,coffee,sass,css,scss set sw=4 sts=4 et
 augroup END
 colorscheme gummy_bears
+
+let g:ctrlp_map = '<c-p>'
