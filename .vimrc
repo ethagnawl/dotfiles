@@ -77,8 +77,8 @@ map <leader>v :view %%
 
 " disable auto-formatting when pasting from
 " system clipboard
-nnoremap <C-p> :set invpaste paste?<CR>
-set pastetoggle=<C-p>
+nnoremap <C-a> :set invpaste paste?<CR>
+set pastetoggle=<C-a>
 set showmode
 
 " load bashrc
