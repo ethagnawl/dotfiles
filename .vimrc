@@ -114,3 +114,6 @@ augroup END
 colorscheme gummy_bears
 
 let g:ctrlp_map = '<c-p>'
+
+" noh no more!
+:nnoremap <esc> :noh<return><esc>
