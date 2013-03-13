@@ -52,6 +52,14 @@ function fifp {
     grep -RnisI "$*" *
 }
 
+function fifv {
+  vim -p $(fif $*)
+}
+
+function fifpa {
+    grep -RnisI -A 3 -B 3 "$*" *
+}
+
 function count_lines {
     find *"$*" -print0 | xargs -0 wc -l
 }
