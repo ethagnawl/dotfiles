@@ -104,11 +104,15 @@ function gdbl {
     git branch -D $1
 }
 
+function gploc {
+    git pull --rebase origin $(gcb)
+}
+
 function gdbr {
     git push origin :$1
 }
 
-function gpoc {
+function gpsoc {
     git push origin $(parse_git_branch)
 }
 
