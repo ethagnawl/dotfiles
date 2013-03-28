@@ -8,6 +8,12 @@ set nocompatible
 set encoding=utf-8
 set colorcolumn=85
 
+set ruler
+set showmatch
+set smartcase
+set scrolloff=5               " keep at least 5 lines above/below
+set sidescrolloff=5           " keep at least 5 lines left/right
+
 " Who doesn't like autoindent?
 set autoindent
 :hi CursorLine   cterm=NONE ctermbg=green ctermfg=black guibg=green guifg=black
@@ -23,10 +29,11 @@ set expandtab
 set smarttab
 
 " Add _ as a word separator
-:set iskeyword-=_
+":set iskeyword-=_
 
 " W aliases w
 :command W w
+set lisp
 
 " Who wants an 8 character tab?  Not me!
 set shiftwidth=2
@@ -119,6 +126,50 @@ augroup END
 colorscheme gummy_bears
 
 let g:ctrlp_map = '<c-p>'
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_switch_buffer = 0
 
-" noh no more!
-:nnoremap <esc> :noh<return><esc>
+" using Powerline plugin instead
+set statusline=%t%h%m%r%=[%b\ 0x%02B]\ \ \ %l,%c%V\ %P
+" Always show a status line
+set laststatus=2
+" "make the command line 1 line high
+set cmdheight=1
+
+" <space> switches to the next window (give it a second)
+:map <space> <c-W>w
+
+
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '--include-vars',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
