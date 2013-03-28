@@ -146,6 +146,7 @@ function be {
 }
 
 alias v='vim'
+alias vim='purge_downloads && vim'
 alias gcb="git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'"
 alias gs='git status'
 alias gpom='git push origin master'
