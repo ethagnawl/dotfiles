@@ -162,6 +162,8 @@ alias gd='git diff'
 alias bbrew='bundle exec rake barista:brew'
 alias deployms='bundle exec rake deploy:staging[+]'
 alias deploymb='bundle exec rake deploy:beta[+]'
+alias deploymp='bundle exec rake deploy:production[+]'
+alias deploymd='bundle exec rake deploy:developer[+]'
 alias jasb='bundle exec rake jasmine'
 alias jasc='bundle exec rake jasmine:ci'
 
