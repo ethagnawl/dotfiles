@@ -176,6 +176,14 @@ function rs {
   fi
 }
 
+function cok {
+  if [ $# == 0 ]; then
+    bundle exec rake cucumber:ok
+  else
+    bundle exec rake cucumber $1
+  fi
+}
+
 alias rdm='echo "rake db:migrate" && bundle exec rake db:migrate'
 alias rdp='echo "rake db:test:prepare" && bundle exec rake db:test:prepare'
 alias rdmp='rdm && rdp'
