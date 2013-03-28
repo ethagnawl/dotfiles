@@ -10,7 +10,7 @@ fi
 
 export EDITOR='vim'
 
-export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
+alias node="env NODE_NO_READLINE=1 rlwrap node"
 
 alias nh='nautilus .'
 alias fh='open .'
