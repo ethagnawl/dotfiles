@@ -43,6 +43,7 @@ function countfs {
 
 # sum size of files in . -r (MB)
 alias cdsize='du -ch | grep total'
+alias lsmb='ls -lh'
 
 function fif {
     grep -lir "$*" *
