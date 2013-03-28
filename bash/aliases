@@ -186,3 +186,25 @@ alias rc='pry'
 function gcbpbc {
   gcb | pbcopy
 }
+
+alias start_postgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias stop_postgres='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+
+alias purge_downloads="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
+# heroku
+function hrc {
+    heroku run console --app $*
+}
+
+function hc {
+    heroku config --app $*
+}
+
+function hr {
+    heroku restart --app $*
+}
+
+function hlt {
+    heroku logs --tail --app $*
+}
