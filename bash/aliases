@@ -89,6 +89,14 @@ function gaac {
     gaa && gcommit "$*"
 }
 
+function gap {
+  if [ $# == 0 ]; then
+      git add -p
+  else
+      git add -p $1
+  fi
+}
+
 function gamend {
     git commit -m "$*" --amend
 }
