@@ -191,3 +191,9 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+if $TERM == "xterm-256color"
+    set t_Co=256
+endif
+
+colorscheme vividchalk
