@@ -36,10 +36,6 @@ set autoindent
 
 set cursorline
 
-" NERDTree goodness
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
 " Spaces are better than a tab character
 set expandtab
 set smarttab
