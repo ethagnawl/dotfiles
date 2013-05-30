@@ -1,5 +1,21 @@
-call pathogen#infect()
-call pathogen#helptags()
+filetype off " required for vundle
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-powerline.git'
+Bundle 'othree/html5.vim'
+Bundle 'itspriddle/vim-jquery'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'mattn/zencoding-vim'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'ervandew/supertab'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'tpope/vim-endwise'
+
 :syntax on
 filetype plugin indent on
 :set number
