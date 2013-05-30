@@ -15,6 +15,9 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'ervandew/supertab'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-endwise'
+Bundle 'jelera/vim-gummybears-colorscheme'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'pangloss/vim-javascript'
 
 :syntax on
 filetype plugin indent on
