@@ -18,6 +18,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'jelera/vim-gummybears-colorscheme'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
+Bundle 'jpalardy/vim-slime'
 
 :syntax on
 filetype plugin indent on
@@ -199,3 +200,5 @@ if $TERM == "xterm-256color"
 endif
 
 colorscheme vividchalk
+
+let g:slime_target = "tmux"
