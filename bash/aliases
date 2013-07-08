@@ -25,11 +25,11 @@ alias cdh='cd --'
 if [ ! $(uname -s) = "Darwin" ]; then
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
-    alias purge_downloads='echo noop'
 fi
 
 if [ $(uname -s) = "Darwin" ]; then
     alias purge_downloads="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+    alias vim='purge_downloads && vim'
 fi
 
 # list only files
@@ -160,7 +160,6 @@ function be {
 }
 
 alias v='vim'
-alias vim='purge_downloads && vim'
 alias vundle_update='vim +BundleInstall +qall'
 alias gcb="git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'"
 alias gs='git status'
