@@ -6,7 +6,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-powerline.git'
+"Bundle 'Lokaltog/vim-powerline.git'
 Bundle 'othree/html5.vim'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-ruby/vim-ruby'
@@ -18,6 +18,14 @@ Bundle 'tpope/vim-endwise'
 Bundle 'jelera/vim-gummybears-colorscheme'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
+Bundle 'wikitopian/hardmode'
+Bundle 'bling/vim-airline'
+
+" enable hard mode
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+" toggle hard mode with \h
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 :syntax on
 filetype plugin indent on
