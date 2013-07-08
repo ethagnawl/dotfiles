@@ -7,7 +7,6 @@ if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
 
-
 export EDITOR='vim'
 
 alias node="env NODE_NO_READLINE=1 rlwrap node"
@@ -22,6 +21,16 @@ alias cdw='cd /var/www'
 alias cdd='cd ~/Desktop'
 alias cdh='cd --'
 
+# Simulate OSX's pbcopy and pbpaste on other platforms
+if [ ! $(uname -s) = "Darwin" ]; then
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+    alias purge_downloads='echo noop'
+fi
+
+if [ $(uname -s) = "Darwin" ]; then
+    alias purge_downloads="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+fi
 
 # list only files
 alias lf="ls -l | egrep -v '^d'"
@@ -152,6 +161,7 @@ function be {
 
 alias v='vim'
 alias vim='purge_downloads && vim'
+alias vundle_update='vim +BundleInstall +qall'
 alias gcb="git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'"
 alias gs='git status'
 alias gpom='git push origin master'
@@ -207,7 +217,6 @@ function gcbpbc {
 alias start_postgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stop_postgres='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
-alias purge_downloads="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
 # heroku
 function hrc {
