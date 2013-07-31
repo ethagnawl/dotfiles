@@ -111,7 +111,7 @@ export PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin
 # custom
 #echo "l3t's r0ck"
 
-export PS1="\[\033[00m\]\u@\h\[\033[01;34m\] \w \[\033[31m\]\$(parse_git_branch_fancy) \[\033[00m\]$\[\033[00m\] "
+export PS1="\[\033[00m\]\u@\h\[\033[01;34m\] \w \[\033[31m\]\$(parse_git_branch_fancy) \[\033[00m\]\nλ\[\033[00m\] "
 
 fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
