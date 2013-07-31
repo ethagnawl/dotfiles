@@ -233,3 +233,7 @@ function hr {
 function hlt {
     heroku logs --tail --app $*
 }
+
+function berap {
+  RAILS_ENV=production bundle exec rake assets:precompile
+}
