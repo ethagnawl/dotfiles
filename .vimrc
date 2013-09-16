@@ -18,10 +18,11 @@ Bundle 'tpope/vim-endwise'
 Bundle 'jelera/vim-gummybears-colorscheme'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
-Bundle 'wikitopian/hardmode'
+"Bundle 'wikitopian/hardmode'
 Bundle 'bling/vim-airline'
 Bundle 'jpalardy/vim-slime'
 Bundle 'ervandew/supertab'
+Bundle 'svermeulen/vim-extended-ft'
 
 " enable hard mode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
