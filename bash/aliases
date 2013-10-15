@@ -204,6 +204,7 @@ alias rdmp='rdm && rdp'
 alias rdpop='echo "rake db:populate" && bundle exec rake db:populate'
 alias bi='bundle install'
 alias bu='bundle update'
+alias gemfile="touch Gemfile && echo \"source 'https://rubygems.org'\" >> Gemfile"
 alias pbc='pbcopy'
 alias scd='python -m SimpleHTTPServer'
 alias irbs='irb --simple-prompt'
