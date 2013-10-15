@@ -213,3 +213,7 @@ let g:slime_target = "tmux"
 
 " disable folding
 set nofoldenable
+
+" disable newline comments
+" http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
