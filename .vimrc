@@ -217,3 +217,5 @@ set nofoldenable
 " disable newline comments
 " http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
