@@ -218,4 +218,6 @@ set nofoldenable
 " http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+au BufNewFile,BufRead *.cshtml set filetype=html
+
 set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
