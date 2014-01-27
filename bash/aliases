@@ -160,6 +160,7 @@ function be {
 }
 
 alias v='vim'
+alias vm='vim'
 alias vundle_update='vim +BundleInstall +qall'
 alias gcb="git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'"
 alias gs='git status'
