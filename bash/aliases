@@ -160,6 +160,7 @@ function be {
     bundle exec "$*"
 }
 
+alias which_linux='uname -a'
 alias v='vim'
 alias vm='vim'
 alias vundle_update='vim +BundleInstall +qall'
