@@ -24,6 +24,7 @@ Bundle 'bling/vim-airline'
 Bundle 'jpalardy/vim-slime'
 Bundle 'ervandew/supertab'
 Bundle 'svermeulen/vim-extended-ft'
+Bundle 'vim-scripts/VimClojure'
 
 " enable hard mode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
