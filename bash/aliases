@@ -20,6 +20,7 @@ alias cddf='cd ~/bin/dotfiles/'
 alias cdw='cd /var/www'
 alias cdd='cd ~/Desktop'
 alias cdh='cd --'
+alias cd..='cd ..'
 
 # Simulate OSX's pbcopy and pbpaste on other platforms
 if [ ! $(uname -s) = "Darwin" ]; then
