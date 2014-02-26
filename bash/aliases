@@ -80,6 +80,8 @@ parse_git_branch_fancy() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[git:\1]/'
 }
 
+alias cdr='cd ./$(git rev-parse --show-cdup)'
+
 function gaa {
     git add .
 }
