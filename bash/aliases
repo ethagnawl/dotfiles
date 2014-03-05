@@ -64,6 +64,7 @@ function fifvo {
   vim -O $(fif $*)
 }
 
+function fifvw {
   vim -p $(fif $*)
 }
 
