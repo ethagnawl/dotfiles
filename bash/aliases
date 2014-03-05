@@ -60,7 +60,10 @@ function fifp {
     grep -RnisI "$*" *
 }
 
-function fifv {
+function fifvo {
+  vim -O $(fif $*)
+}
+
   vim -p $(fif $*)
 }
 
