@@ -27,6 +27,7 @@ Bundle 'ervandew/supertab'
 Bundle 'svermeulen/vim-extended-ft'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/nerdtree'
 
 " enable hard mode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
