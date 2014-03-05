@@ -3,6 +3,7 @@ filetype off " required for vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'camelcasemotion'
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
