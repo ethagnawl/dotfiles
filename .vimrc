@@ -218,6 +218,7 @@ if $TERM == "xterm-256color"
 endif
 
 let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
 
 " disable folding
 set nofoldenable
