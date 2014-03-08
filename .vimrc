@@ -28,6 +28,9 @@ Bundle 'svermeulen/vim-extended-ft'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree'
+Bundle 'yankstack'
+
+nmap <leader>p <Plug>yankstack_substitute_older_paste
 
 " enable hard mode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
