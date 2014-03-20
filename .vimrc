@@ -3,8 +3,8 @@ filetype off " required for vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'camelcasemotion'
 Bundle 'gmarik/vundle'
+Bundle 'camelcasemotion'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-powerline.git'
@@ -28,7 +28,7 @@ Bundle 'svermeulen/vim-extended-ft'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree'
-Bundle 'yankstack'
+Bundle 'https://github.com/vim-scripts/Markology'
 
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 
