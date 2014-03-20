@@ -21,6 +21,14 @@ alias cdw='cd /var/www'
 alias cdd='cd ~/Desktop'
 alias cdh='cd --'
 alias cd..='cd ..'
+## a quick way to get out of current directory ##
+# http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
 
 # Simulate OSX's pbcopy and pbpaste on other platforms
 if [ ! $(uname -s) = "Darwin" ]; then
