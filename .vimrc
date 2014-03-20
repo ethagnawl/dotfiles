@@ -30,7 +30,10 @@ Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree'
 Bundle 'https://github.com/vim-scripts/Markology'
 
-nmap <leader>p <Plug>yankstack_substitute_older_paste
+" yankstack was clobbering "*p on crunchbang
+"Bundle 'yankstack'
+"call yankstack#setup()
+"nmap <leader>p <Plug>yankstack_substitute_older_paste
 
 " enable hard mode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
