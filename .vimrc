@@ -30,6 +30,15 @@ Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree'
 Bundle 'https://github.com/vim-scripts/Markology'
 
+" snippet infrastructure
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+
+" snippets
+Bundle "honza/vim-snippets"
+
+
 " yankstack was clobbering "*p on crunchbang
 "Bundle 'yankstack'
 "call yankstack#setup()
