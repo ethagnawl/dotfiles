@@ -32,6 +32,14 @@ Bundle 'https://github.com/vim-scripts/Markology'
 Bundle 'https://github.com/terryma/vim-expand-region'
 Bundle 'https://github.com/tpope/vim-commentary'
 
+"" snippet infrastructure
+"Bundle "MarcWeber/vim-addon-mw-utils"
+"Bundle "tomtom/tlib_vim"
+"Bundle "garbas/vim-snipmate"
+"
+"" snippets
+"Bundle "honza/vim-snippets"
+
 
 " yankstack was clobbering "*p on crunchbang
 "Bundle 'yankstack'
