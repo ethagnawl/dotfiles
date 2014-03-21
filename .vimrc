@@ -29,6 +29,7 @@ Bundle 'vim-scripts/VimClojure'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree'
 Bundle 'https://github.com/vim-scripts/Markology'
+Bundle 'https://github.com/terryma/vim-expand-region'
 
 " snippet infrastructure
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -242,3 +243,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 au BufNewFile,BufRead *.cshtml set filetype=html
 
 set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+
+" http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+" for use with terryma/vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
