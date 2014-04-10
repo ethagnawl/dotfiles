@@ -259,3 +259,6 @@ autocmd VimLeave * nested if (!isdirectory($HOME . "/.vim")) |
 autocmd VimEnter * nested if argc() == 0 && filereadable($HOME . "/.vim/Session.vim") |
     \ execute "source " . $HOME . "/.vim/Session.vim"
 
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
