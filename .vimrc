@@ -259,3 +259,5 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+colorscheme darkblue
