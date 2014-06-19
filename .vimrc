@@ -239,7 +239,8 @@ let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 
 " disable folding
-set nofoldenable
+set foldlevelstart=99
+au FileType markdown,mkd setlocal nofoldenable
 
 " disable newline comments
 " http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
