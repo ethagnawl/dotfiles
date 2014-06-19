@@ -255,6 +255,7 @@ set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
+" https://github.com/thoughtbot/dotfiles/blob/master/vimrc
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
