@@ -61,6 +61,10 @@ function countfs {
 alias cdsize='du -ch | grep total'
 alias lsmb='ls -lh'
 
+function fn {
+  find . -name $1
+}
+
 function fif {
     grep -lir "$*" *
 }
