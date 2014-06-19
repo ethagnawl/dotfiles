@@ -31,6 +31,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'https://github.com/vim-scripts/Markology'
 Bundle 'https://github.com/terryma/vim-expand-region'
 Bundle 'https://github.com/tpope/vim-commentary'
+Bundle 'https://github.com/tpope/vim-unimpaired'
+Bundle 'https://github.com/tpope/vim-jdaddy'
+Bundle 'https://github.com/paradigm/TextObjectify'
+Bundle 'https://github.com/jeetsukumaran/vim-mochalatte'
 
 "" snippet infrastructure
 "Bundle "MarcWeber/vim-addon-mw-utils"
