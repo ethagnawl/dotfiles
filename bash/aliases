@@ -241,10 +241,14 @@ function gcbpbc {
 alias start_postgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stop_postgres='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
-function killtms {
+function kts {
   tmux kill-session -t $*
 }
 
+function kcts {
+  session_name=$(tmux display-message -p '#S')
+  kts $session_name
+}
 
 # heroku
 function hrc {
