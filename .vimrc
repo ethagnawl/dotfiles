@@ -264,9 +264,7 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-if $TERM == "xterm-256color"
-    set t_Co=256
-endif
+set t_Co=256
 
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
