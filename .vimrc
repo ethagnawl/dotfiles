@@ -175,6 +175,22 @@ set vb t_vb=".
 " noh no more!
 nnoremap <silent> _ :nohl<CR>
 
+" the following were culled from: https://gist.github.com/ethagnawl/c81273ec1c578019eed1
+
+" <losh>
+
+" use tab to jump to matching ), }, p, etc.
+map <tab> %
+
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Don't move on *
+nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(stay_star_view)<cr>
+
+" </losh>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
