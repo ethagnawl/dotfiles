@@ -206,7 +206,7 @@ augroup vimrcEx
 
   "for ruby, autoindent with two spaces, always expand tabs
   autocmd FileType ruby,haml,eruby,yaml,cucumber set ai sw=2 sts=2 et
-  autocmd FileType python,javascript,coffee,sass,css,scss,html set ai sw=4 sts=4 et
+  autocmd FileType php,python,javascript,coffee,sass,css,scss,html set ai sw=4 sts=4 et
 augroup END
 
 let g:ctrlp_map = '<c-p>'
