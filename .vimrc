@@ -35,6 +35,19 @@ Bundle 'https://github.com/tpope/vim-unimpaired'
 Bundle 'https://github.com/tpope/vim-jdaddy'
 Bundle 'https://github.com/paradigm/TextObjectify'
 Bundle 'https://github.com/jeetsukumaran/vim-mochalatte'
+Bundle 'https://github.com/xolox/vim-misc'
+Bundle 'https://github.com/vim-scripts/vim-colorscheme-switcher'
+Bundle 'https://github.com/vim-scripts/SmartColumnColor'
+Bundle 'https://github.com/vim-scripts/ReplaceWithRegister'
+Bundle 'https://github.com/vim-scripts/candyVirus.vim'
+Bundle 'desert256.vim'
+Bundle 'inkpot'
+Bundle 'https://github.com/lambdatoast/elm.vim'
+Bundle 'git://github.com/urso/haskell_syntax.vim.git'
+Bundle "git://github.com/tpope/vim-leiningen.git"
+Bundle "git://github.com/tpope/vim-projectionist.git"
+Bundle "git://github.com/tpope/vim-dispatch.git"
+Bundle "git://github.com/tpope/vim-fireplace.git"
 
 "" snippet infrastructure
 "Bundle "MarcWeber/vim-addon-mw-utils"
