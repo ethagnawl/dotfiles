@@ -166,6 +166,9 @@ noremap L $
 " Search and replace word under cursor (,;)
 nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
 
+" map \r to :RandomColorScheme
+nnoremap <leader>r :RandomColorScheme<CR>
+
 " kill beep
 set vb t_vb=".
 
