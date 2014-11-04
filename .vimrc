@@ -8,6 +8,7 @@ execute pathogen#infect()
 Plugin 'gmarik/Vundle.vim'
 
 " Bundle 'gmarik/vundle'
+Bundle 'https://github.com/flazz/vim-colorschemes'
 Bundle 'camelcasemotion'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
