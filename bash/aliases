@@ -182,6 +182,7 @@ function be {
 alias which_linux='uname -a'
 alias v='vim'
 alias vm='vim'
+alias vem='vim'
 alias vundle_update='vim +BundleInstall +qall'
 alias vundle_clean='vim +BundleClean +qall'
 alias gcb="git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'"
