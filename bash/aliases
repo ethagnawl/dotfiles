@@ -272,7 +272,7 @@ function berap {
   RAILS_ENV=production bundle exec rake assets:precompile
 }
 
-
+alias t=tree
 alias tl1='tree -L 1'
 alias tl2='tree -L 2'
 alias tl3='tree -L 3'
