@@ -295,3 +295,28 @@ set splitbelow
 set splitright
 
 colorscheme darkblue
+
+let g:syntastic_javascript_checkers = ['jshint']
+
+" Custom syntastic settings:
+function s:find_jshintrc(dir)
+    let l:found = globpath(a:dir, '.jshintrc')
+    if filereadable(l:found)
+        return l:found
+    endif
+
+    let l:parent = fnamemodify(a:dir, ':h')
+    if l:parent != a:dir
+        return s:find_jshintrc(l:parent)
+    endif
+
+    return "~/.jshintrc"
+endfunction
+
+function UpdateJsHintConf()
+    let l:dir = expand('%:p:h')
+    let l:jshintrc = s:find_jshintrc(l:dir)
+    let g:syntastic_javascript_jshint_args = l:jshintrc
+endfunction
+
+au BufEnter * call UpdateJsHintConf()
