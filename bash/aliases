@@ -39,7 +39,7 @@ fi
 
 if [ $(uname -s) = "Darwin" ]; then
     alias purge_downloads="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
-    alias vim='purge_downloads && vim'
+    alias vim='purge_downloads && reattach-to-user-namespace vim'
 fi
 
 # list only files
