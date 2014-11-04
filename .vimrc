@@ -54,6 +54,9 @@ Bundle "git://github.com/tpope/vim-projectionist.git"
 Bundle "git://github.com/tpope/vim-dispatch.git"
 Bundle "git://github.com/tpope/vim-fireplace.git"
 Bundle 'calebsmith/vim-lambdify'
+Bundle "https://github.com/whatyouhide/vim-gotham"
+Bundle "https://github.com/vim-scripts/cascadia.vim"
+Bundle "nice/sweater"
 
 " used pathogen to install - vundle wasn't working
 "Bundle "https://github.com/scrooloose/syntastic"
@@ -332,6 +335,8 @@ function UpdateJsHintConf()
 endfunction
 
 au BufEnter * call UpdateJsHintConf()
+
+set synmaxcol=200
 
 if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
