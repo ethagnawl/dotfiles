@@ -53,6 +53,7 @@ Bundle "git://github.com/tpope/vim-leiningen.git"
 Bundle "git://github.com/tpope/vim-projectionist.git"
 Bundle "git://github.com/tpope/vim-dispatch.git"
 Bundle "git://github.com/tpope/vim-fireplace.git"
+Bundle 'calebsmith/vim-lambdify'
 
 " used pathogen to install - vundle wasn't working
 "Bundle "https://github.com/scrooloose/syntastic"
