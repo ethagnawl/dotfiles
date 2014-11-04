@@ -1,9 +1,13 @@
 filetype off " required for vundle
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+execute pathogen#infect()
+
+Plugin 'gmarik/Vundle.vim'
+
+" Bundle 'gmarik/vundle'
 Bundle 'camelcasemotion'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
@@ -66,6 +70,8 @@ Bundle "git://github.com/tpope/vim-fireplace.git"
 "Bundle 'yankstack'
 "call yankstack#setup()
 "nmap <leader>p <Plug>yankstack_substitute_older_paste
+
+" call vundle#end()
 
 " enable hard mode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
