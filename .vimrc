@@ -269,6 +269,9 @@ set t_Co=256
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 
+xmap <leader>c <Plug>SlimeRegionSend
+nmap <leader>c <Plug>SlimeParagraphSend
+
 " disable folding
 set foldlevelstart=99
 au FileType markdown,mkd setlocal nofoldenable
