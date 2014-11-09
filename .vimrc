@@ -49,7 +49,11 @@ Bundle 'git://github.com/urso/haskell_syntax.vim.git'
 Bundle "https://github.com/guns/vim-clojure-static"
 Bundle "git://github.com/tpope/vim-projectionist.git"
 Bundle "git://github.com/tpope/vim-dispatch.git"
+Bundle "git://github.com/whatyouhide/vim-gotham.git"
 Bundle "https://github.com/kien/rainbow_parentheses.vim"
+Bundle 'https://github.com/vim-scripts/ZoomWin'
+Bundle "https://github.com/sickill/vim-pasta"
+Bundle "https://github.com/vim-scripts/matchit.zip"
 
 "" snippet infrastructure
 "Bundle "MarcWeber/vim-addon-mw-utils"
