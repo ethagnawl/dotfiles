@@ -233,6 +233,8 @@ alias pbc='pbcopy'
 alias scd='python -m SimpleHTTPServer'
 alias irbs='irb --simple-prompt'
 alias rc='pry'
+alias berc='be rails c'
+alias bers='be rails s'
 
 function gcbpbc {
   gcb | pbcopy
