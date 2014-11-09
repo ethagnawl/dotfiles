@@ -104,9 +104,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # setting env variable
-export JAVA_HOME=/home/pete/SDKs/jdk1.6.0_20
-export ANT_HOME=/home/pete/web-server/Tools/apache-ant-1.8.0
-export PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin
+# export JAVA_HOME=/home/pete/SDKs/jdk1.6.0_20
+# export ANT_HOME=/home/pete/web-server/Tools/apache-ant-1.8.0
+# export PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin
 
 # custom
 #echo "l3t's r0ck"
