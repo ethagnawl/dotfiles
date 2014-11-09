@@ -25,7 +25,6 @@ Bundle 'bling/vim-airline'
 Bundle 'jpalardy/vim-slime'
 Bundle 'ervandew/supertab'
 Bundle 'svermeulen/vim-extended-ft'
-Bundle 'vim-scripts/VimClojure'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree'
 Bundle 'https://github.com/vim-scripts/Markology'
@@ -44,10 +43,12 @@ Bundle 'desert256.vim'
 Bundle 'inkpot'
 Bundle 'https://github.com/lambdatoast/elm.vim'
 Bundle 'git://github.com/urso/haskell_syntax.vim.git'
-Bundle "git://github.com/tpope/vim-leiningen.git"
+" Bundle 'vim-scripts/VimClojure'
+" Bundle "git://github.com/tpope/vim-leiningen.git"
+" Bundle "git://github.com/tpope/vim-fireplace.git"
+Bundle "https://github.com/guns/vim-clojure-static"
 Bundle "git://github.com/tpope/vim-projectionist.git"
 Bundle "git://github.com/tpope/vim-dispatch.git"
-Bundle "git://github.com/tpope/vim-fireplace.git"
 
 "" snippet infrastructure
 "Bundle "MarcWeber/vim-addon-mw-utils"
@@ -278,6 +279,8 @@ au FileType markdown,mkd setlocal nofoldenable
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 au BufNewFile,BufRead *.cshtml set filetype=html
+
+au BufNewFile,BufRead *.cljs set filetype=clojure
 
 set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 
