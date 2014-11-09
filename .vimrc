@@ -301,6 +301,7 @@ set splitright
 
 colorscheme darkblue
 
+" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
