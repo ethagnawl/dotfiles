@@ -1,30 +1,32 @@
 filetype off " required for vundle
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+execute pathogen#infect()
+
+Plugin 'gmarik/Vundle.vim'
+
+" Bundle 'gmarik/vundle'
+Bundle 'https://github.com/flazz/vim-colorschemes'
 Bundle 'camelcasemotion'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-powerline.git'
 Bundle 'othree/html5.vim'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails.git'
 Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-vividchalk'
-Bundle 'ervandew/supertab'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-endwise'
-"Bundle 'jelera/vim-gummybears-colorscheme'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 "Bundle 'wikitopian/hardmode'
 Bundle 'bling/vim-airline'
 Bundle 'jpalardy/vim-slime'
-Bundle 'ervandew/supertab'
 Bundle 'svermeulen/vim-extended-ft'
+Bundle 'vim-scripts/gummybears'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree'
 Bundle 'https://github.com/vim-scripts/Markology'
@@ -54,6 +56,10 @@ Bundle "https://github.com/kien/rainbow_parentheses.vim"
 Bundle 'https://github.com/vim-scripts/ZoomWin'
 Bundle "https://github.com/sickill/vim-pasta"
 Bundle "https://github.com/vim-scripts/matchit.zip"
+Bundle 'calebsmith/vim-lambdify'
+Bundle "https://github.com/whatyouhide/vim-gotham"
+Bundle "https://github.com/vim-scripts/cascadia.vim"
+Bundle "nice/sweater"
 
 "" snippet infrastructure
 "Bundle "MarcWeber/vim-addon-mw-utils"
@@ -68,6 +74,8 @@ Bundle "https://github.com/vim-scripts/matchit.zip"
 "Bundle 'yankstack'
 "call yankstack#setup()
 "nmap <leader>p <Plug>yankstack_substitute_older_paste
+
+" call vundle#end()
 
 " enable hard mode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
@@ -211,6 +219,7 @@ augroup vimrcEx
     \ endif
 
   "for ruby, autoindent with two spaces, always expand tabs
+  autocmd BufRead,BufNewFile *.ascx set ai sw=4 sts=4 et
   autocmd FileType ruby,haml,eruby,yaml,cucumber set ai sw=2 sts=2 et
   autocmd FileType php,python,javascript,coffee,sass,css,scss,html set ai sw=4 sts=4 et
 augroup END
@@ -275,6 +284,9 @@ set t_Co=256
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 
+xmap <leader>c <Plug>SlimeRegionSend
+nmap <leader>c <Plug>SlimeParagraphSend
+
 " disable folding
 set foldlevelstart=99
 au FileType markdown,mkd setlocal nofoldenable
@@ -301,8 +313,6 @@ set splitright
 
 colorscheme darkblue
 
-" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -326,3 +336,37 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+let g:syntastic_javascript_checkers = ['jshint']
+
+" Custom syntastic settings:
+function s:find_jshintrc(dir)
+    let l:found = globpath(a:dir, '.jshintrc')
+    if filereadable(l:found)
+        return l:found
+    endif
+
+    let l:parent = fnamemodify(a:dir, ':h')
+    if l:parent != a:dir
+        return s:find_jshintrc(l:parent)
+    endif
+
+    return "~/.jshintrc"
+endfunction
+
+function UpdateJsHintConf()
+    let l:dir = expand('%:p:h')
+    let l:jshintrc = s:find_jshintrc(l:dir)
+    let g:syntastic_javascript_jshint_args = l:jshintrc
+endfunction
+
+au BufEnter * call UpdateJsHintConf()
+
+set synmaxcol=200
+
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
