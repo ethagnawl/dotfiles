@@ -7,81 +7,68 @@ execute pathogen#infect()
 
 Plugin 'gmarik/Vundle.vim'
 
-" Bundle 'gmarik/vundle'
+" colorscheme plugins
+Bundle 'https://github.com/vim-scripts/vim-colorscheme-switcher'
 Bundle 'https://github.com/flazz/vim-colorschemes'
+Bundle "https://github.com/whatyouhide/vim-gotham"
+Bundle "https://github.com/vim-scripts/cascadia.vim"
+Bundle "nice/sweater"
+Bundle 'tpope/vim-vividchalk'
+Bundle 'vim-scripts/gummybears'
+Bundle 'https://github.com/jeetsukumaran/vim-mochalatte'
+Bundle 'https://github.com/vim-scripts/candyVirus.vim'
+Bundle 'desert256.vim'
+Bundle 'inkpot'
+
+" clojure plugins
+Bundle 'vim-scripts/VimClojure'
+Bundle "https://github.com/guns/vim-clojure-static"
+" Bundle "git://github.com/tpope/vim-leiningen.git"
+" Bundle "git://github.com/tpope/vim-fireplace.git"
+
+" javascript plugins
+Bundle 'pangloss/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'itspriddle/vim-jquery'
+Bundle 'https://github.com/tpope/vim-jdaddy'
+
+" ruby plugins
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-endwise'
+
+" html plugins
+Bundle 'othree/html5.vim'
+Bundle 'mattn/emmet-vim'
+
+" markdown plugins
+Bundle 'plasticboy/vim-markdown'
+
+" haskell plugins
+Bundle 'git://github.com/urso/haskell_syntax.vim.git'
+Bundle 'https://github.com/lambdatoast/elm.vim'
+
+" misc plugins
 Bundle 'camelcasemotion'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'othree/html5.vim'
-Bundle 'itspriddle/vim-jquery'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails.git'
-Bundle 'mattn/emmet-vim'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'tpope/vim-endwise'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'pangloss/vim-javascript'
-"Bundle 'wikitopian/hardmode'
 Bundle 'bling/vim-airline'
 Bundle 'jpalardy/vim-slime'
 Bundle 'svermeulen/vim-extended-ft'
-Bundle 'vim-scripts/gummybears'
 Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdtree'
 Bundle 'https://github.com/vim-scripts/Markology'
 Bundle 'https://github.com/terryma/vim-expand-region'
 Bundle 'https://github.com/tpope/vim-commentary'
 Bundle 'https://github.com/tpope/vim-unimpaired'
-Bundle 'https://github.com/tpope/vim-jdaddy'
 Bundle 'https://github.com/paradigm/TextObjectify'
-Bundle 'https://github.com/jeetsukumaran/vim-mochalatte'
 Bundle 'https://github.com/xolox/vim-misc'
-Bundle 'https://github.com/vim-scripts/vim-colorscheme-switcher'
 Bundle 'https://github.com/vim-scripts/SmartColumnColor'
 Bundle 'https://github.com/vim-scripts/ReplaceWithRegister'
-Bundle 'https://github.com/vim-scripts/candyVirus.vim'
-Bundle 'desert256.vim'
-Bundle 'inkpot'
-Bundle 'https://github.com/lambdatoast/elm.vim'
-Bundle 'git://github.com/urso/haskell_syntax.vim.git'
-" Bundle 'vim-scripts/VimClojure'
-" Bundle "git://github.com/tpope/vim-leiningen.git"
-" Bundle "git://github.com/tpope/vim-fireplace.git"
-Bundle "https://github.com/guns/vim-clojure-static"
-Bundle "git://github.com/tpope/vim-projectionist.git"
-Bundle "git://github.com/tpope/vim-dispatch.git"
-Bundle "git://github.com/whatyouhide/vim-gotham.git"
 Bundle "https://github.com/kien/rainbow_parentheses.vim"
 Bundle 'https://github.com/vim-scripts/ZoomWin'
 Bundle "https://github.com/sickill/vim-pasta"
 Bundle "https://github.com/vim-scripts/matchit.zip"
 Bundle 'calebsmith/vim-lambdify'
-Bundle "https://github.com/whatyouhide/vim-gotham"
-Bundle "https://github.com/vim-scripts/cascadia.vim"
-Bundle "nice/sweater"
-
-"" snippet infrastructure
-"Bundle "MarcWeber/vim-addon-mw-utils"
-"Bundle "tomtom/tlib_vim"
-"Bundle "garbas/vim-snipmate"
-"
-"" snippets
-"Bundle "honza/vim-snippets"
-
-
-" yankstack was clobbering "*p on crunchbang
-"Bundle 'yankstack'
-"call yankstack#setup()
-"nmap <leader>p <Plug>yankstack_substitute_older_paste
-
-" call vundle#end()
-
-" enable hard mode
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-
-" toggle hard mode with \h
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 :syntax on
 filetype plugin indent on
