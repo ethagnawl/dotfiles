@@ -134,17 +134,6 @@ set nowb
 " scroll throught autocomplete results
 set wildmenu
 
-" toggle absolute/relative line numbers
-function! NumberToggle()
-    if(&relativenumber == 1)
-      set number
-    else
-      set relativenumber
-    endif
-endfunc
-
-nnoremap <C-n> :call NumberToggle()<cr>
-
 nnoremap <C-t> :TagbarToggle<cr>
 
 " Edit or view files in same directory as current file
