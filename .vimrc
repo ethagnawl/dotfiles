@@ -169,6 +169,7 @@ nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
 
 " map \r to :RandomColorScheme
 nnoremap <leader>r :RandomColorScheme<CR>
+colorscheme obsidian
 
 " kill beep
 set vb t_vb=".
@@ -298,7 +299,6 @@ vmap <C-v> <Plug>(expand_region_shrink)
 set splitbelow
 set splitright
 
-colorscheme darkblue
 
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
