@@ -339,6 +339,8 @@ endfunction
 
 au BufEnter * call UpdateJsHintConf()
 
+set clipboard=unnamed
+
 set synmaxcol=200
 
 if &term =~ '256color'
