@@ -69,7 +69,7 @@ Bundle 'https://github.com/vim-scripts/ZoomWin'
 Bundle "https://github.com/sickill/vim-pasta"
 Bundle "https://github.com/vim-scripts/matchit.zip"
 Bundle 'calebsmith/vim-lambdify'
-Bundle "'nelstrom/vim-visual-star-search'"
+Bundle "nelstrom/vim-visual-star-search"
 Bundle "wellle/tmux-complete.vim"
 
 :syntax on
