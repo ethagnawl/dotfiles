@@ -70,7 +70,8 @@ Bundle "https://github.com/sickill/vim-pasta"
 Bundle "https://github.com/vim-scripts/matchit.zip"
 Bundle 'calebsmith/vim-lambdify'
 Bundle "nelstrom/vim-visual-star-search"
-Bundle "wellle/tmux-complete.vim" " autocomplete from tmux with <C-X><C-U>
+" autocomplete from tmux with <C-X><C-U>
+Bundle "wellle/tmux-complete.vim"
 
 :syntax on
 filetype plugin indent on
