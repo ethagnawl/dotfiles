@@ -343,6 +343,8 @@ endfunction
 
 au BufEnter * call UpdateJsHintConf()
 
+let g:syntastic_scss_checkers = ['scss_lint']
+
 set clipboard=unnamed
 
 set synmaxcol=200
