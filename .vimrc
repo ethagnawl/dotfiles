@@ -166,6 +166,7 @@ nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
 
 " map \r to :RandomColorScheme
 nnoremap <leader>r :RandomColorScheme<CR>
+
 colorscheme obsidian
 
 " kill beep
