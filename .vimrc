@@ -69,7 +69,9 @@ Bundle 'https://github.com/vim-scripts/ZoomWin'
 Bundle "https://github.com/sickill/vim-pasta"
 Bundle "https://github.com/vim-scripts/matchit.zip"
 Bundle 'calebsmith/vim-lambdify'
-Bundle "'nelstrom/vim-visual-star-search'"
+Bundle "nelstrom/vim-visual-star-search"
+" autocomplete from tmux with <C-X><C-U>
+Bundle "wellle/tmux-complete.vim"
 
 :syntax on
 filetype plugin indent on
@@ -133,17 +135,6 @@ set nowb
 
 " scroll throught autocomplete results
 set wildmenu
-
-" toggle absolute/relative line numbers
-function! NumberToggle()
-    if(&relativenumber == 1)
-      set number
-    else
-      set relativenumber
-    endif
-endfunc
-
-nnoremap <C-n> :call NumberToggle()<cr>
 
 nnoremap <C-t> :TagbarToggle<cr>
 
@@ -285,6 +276,8 @@ au BufNewFile,BufRead *.cshtml set filetype=html
 
 au BufNewFile,BufRead *.cljs set filetype=clojure
 
+au BufNewFile,BufRead *.json set ft=javascript
+
 set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 
 " http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
@@ -346,6 +339,10 @@ function UpdateJsHintConf()
 endfunction
 
 au BufEnter * call UpdateJsHintConf()
+
+let g:syntastic_scss_checkers = ['scss_lint']
+
+set clipboard=unnamed
 
 set synmaxcol=200
 
