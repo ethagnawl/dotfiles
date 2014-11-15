@@ -152,10 +152,6 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
 
-" disable auto-formatting when pasting from
-" system clipboard
-nnoremap <C-a> :set invpaste paste?<CR>
-set pastetoggle=<C-a>
 set showmode
 
 " load bashrc
