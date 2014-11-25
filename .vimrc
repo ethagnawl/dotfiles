@@ -19,6 +19,7 @@ Bundle 'https://github.com/jeetsukumaran/vim-mochalatte'
 Bundle 'https://github.com/vim-scripts/candyVirus.vim'
 Bundle 'desert256.vim'
 Bundle 'inkpot'
+Bundle "https://github.com/vim-scripts/atom-dark"
 
 " clojure plugins
 Bundle 'vim-scripts/VimClojure'
