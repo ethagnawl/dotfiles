@@ -158,6 +158,9 @@ noremap L $
 " Search and replace word under cursor (,;)
 nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
 
+" leader jumps into command prompt
+nnoremap <leader> :
+
 " map \r to :RandomColorScheme
 nnoremap <leader>r :RandomColorScheme<CR>
 
