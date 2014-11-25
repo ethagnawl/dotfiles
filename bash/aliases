@@ -236,6 +236,8 @@ alias irbs='irb --simple-prompt'
 alias rc='pry'
 alias berc='be rails c'
 alias bers='be rails s'
+alias berdd='be rake db:drop'
+alias berds='be rake db:setup'
 
 function gcbpbc {
   gcb | pbcopy
