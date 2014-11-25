@@ -277,6 +277,8 @@ au BufNewFile,BufRead *.cshtml set filetype=html
 
 au BufNewFile,BufRead *.cljs set filetype=clojure
 
+au BufNewFile,BufRead *.cljs.hl set filetype=clojure
+
 au BufNewFile,BufRead *.json set ft=javascript
 
 set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
