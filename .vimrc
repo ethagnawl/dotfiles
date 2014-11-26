@@ -72,6 +72,7 @@ Bundle "https://github.com/vim-scripts/matchit.zip"
 Bundle 'calebsmith/vim-lambdify'
 Bundle "nelstrom/vim-visual-star-search"
 Bundle "supertab"
+Bundle 'mileszs/ack.vim'
 
 " autocomplete from tmux with <C-X><C-U>
 Bundle "wellle/tmux-complete.vim"
