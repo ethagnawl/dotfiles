@@ -84,6 +84,7 @@ Bundle "supertab"
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/vim-argwrap'
 Bundle 'mtth/scratch.vim'
+Bundle 'idanarye/vim-casetrate'
 
 :syntax on
 filetype plugin indent on
