@@ -227,6 +227,8 @@ augroup vimrcEx
   autocmd FileType php,python,javascript,coffee,sass,css,scss,html set ai sw=4 sts=4 et
 augroup END
 
+
+" Control-P config
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
@@ -234,58 +236,15 @@ let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 
-" using Powerline plugin instead
-set statusline=%t%h%m%r%=[%b\ 0x%02B]\ \ \ %l,%c%V\ %P
-" Always show a status line
-set laststatus=2
-" "make the command line 1 line high
-set cmdheight=1
 
-" <space> switches to the next window (give it a second)
-:map <space> <c-W>w
-
-" Move around splits with <c-hjkl>
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-
-
+" vim slime config
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
-
 xmap <leader>eval <Plug>SlimeRegionSend
 nmap <leader>eval <Plug>SlimeParagraphSend
 
-" disable folding
-set foldlevelstart=99
-au FileType markdown,mkd setlocal nofoldenable
 
-" disable newline comments
-" http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-au BufNewFile,BufRead *.cshtml set filetype=html
-
-au BufNewFile,BufRead *.cljs set filetype=clojure
-
-au BufNewFile,BufRead *.cljs.hl set filetype=clojure
-
-au BufNewFile,BufRead *.json set ft=javascript
-
-set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
-
-" http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
-" for use with terryma/vim-expand-region
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-
-" https://github.com/thoughtbot/dotfiles/blob/master/vimrc
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
-
+" RainbowParentheses config
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -304,15 +263,15 @@ let g:rbpt_colorpairs = [
     \ ['darkred',     'DarkOrchid3'],
     \ ['red',         'firebrick3'],
     \ ]
-
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+
+" syntastic/jshint config
 let g:syntastic_javascript_checkers = ['jshint']
 
-" Custom syntastic settings:
 function s:find_jshintrc(dir)
     let l:found = globpath(a:dir, '.jshintrc')
     if filereadable(l:found)
@@ -335,7 +294,58 @@ endfunction
 
 au BufEnter * call UpdateJsHintConf()
 
+
+" syntastic/scss config
 let g:syntastic_scss_checkers = ['scss_lint']
+
+
+" vim-expand-region config
+" http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+" for use with terryma/vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+
+" using Powerline plugin instead
+set statusline=%t%h%m%r%=[%b\ 0x%02B]\ \ \ %l,%c%V\ %P
+
+" Always show a status line
+set laststatus=2
+
+" "make the command line 1 line high
+set cmdheight=1
+
+" <space> switches to the next window (give it a second)
+:map <space> <c-W>w
+
+" Move around splits with <c-hjkl>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" disable folding
+set foldlevelstart=99
+au FileType markdown,mkd setlocal nofoldenable
+
+" disable newline comments
+" http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+au BufNewFile,BufRead *.cshtml set filetype=html
+
+au BufNewFile,BufRead *.cljs set filetype=clojure
+
+au BufNewFile,BufRead *.cljs.hl set filetype=clojure
+
+au BufNewFile,BufRead *.json set ft=javascript
+
+set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+
+" https://github.com/thoughtbot/dotfiles/blob/master/vimrc
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
 
 set clipboard=unnamed
 
