@@ -83,6 +83,7 @@ Bundle "nelstrom/vim-visual-star-search"
 Bundle "supertab"
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/vim-argwrap'
+Bundle 'mtth/scratch.vim'
 
 :syntax on
 filetype plugin indent on
