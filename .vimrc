@@ -82,9 +82,7 @@ Bundle 'calebsmith/vim-lambdify'
 Bundle "nelstrom/vim-visual-star-search"
 Bundle "supertab"
 Bundle 'mileszs/ack.vim'
-
-" autocomplete from tmux with <C-X><C-U>
-Bundle "wellle/tmux-complete.vim"
+Bundle 'vim-scripts/vim-argwrap'
 
 :syntax on
 filetype plugin indent on
