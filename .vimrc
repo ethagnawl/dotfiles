@@ -101,7 +101,6 @@ set smartcase
 set scrolloff=5               " keep at least 5 lines above/below
 set sidescrolloff=5           " keep at least 5 lines left/right
 
-
 " Who doesn't like autoindent?
 set autoindent
 :hi CursorLine   cterm=NONE ctermbg=green ctermfg=black guibg=green guifg=black
