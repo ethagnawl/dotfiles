@@ -101,6 +101,7 @@ set smartcase
 set scrolloff=5               " keep at least 5 lines above/below
 set sidescrolloff=5           " keep at least 5 lines left/right
 
+
 " Who doesn't like autoindent?
 set autoindent
 :hi CursorLine   cterm=NONE ctermbg=green ctermfg=black guibg=green guifg=black
@@ -149,7 +150,6 @@ set nowb
 " scroll throught autocomplete results
 set wildmenu
 
-nnoremap <C-t> :TagbarToggle<cr>
 
 " Edit or view files in same directory as current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
