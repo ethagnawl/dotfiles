@@ -54,6 +54,10 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'git://github.com/urso/haskell_syntax.vim.git'
 Bundle 'https://github.com/lambdatoast/elm.vim'
 
+" tmux plugins
+" autocomplete from tmux with <C-X><C-U>
+Bundle "wellle/tmux-complete.vim"
+
 " misc plugins
 Bundle 'camelcasemotion'
 Bundle 'kien/ctrlp.vim'
