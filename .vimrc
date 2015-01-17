@@ -171,26 +171,10 @@ nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
 " leader jumps into command prompt
 nnoremap <leader> :
 
-" map \cscheme to :ShowColourSchemeName
-function! ShowColourSchemeName()
-    try
-        echo g:colors_name
-    catch /^Vim:E121/
-        echo "default
-    endtry
-endfunction
-
-nnoremap <leader>c :call ShowColourSchemeName()<CR>
-
-" map \r to :RandomColorScheme
-nnoremap <leader>r :RandomColorScheme<CR>
-
-colorscheme obsidian
-
 " kill beep
 set vb t_vb=".
 
-" noh no more!
+" kill highlights with shift+_
 nnoremap <silent> _ :nohl<CR>
 
 " the following were culled from: https://gist.github.com/ethagnawl/c81273ec1c578019eed1
@@ -213,19 +197,40 @@ nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(st
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup vimrcEx
+
   " Clear all autocmds in the group
   autocmd!
+
   autocmd FileType text setlocal textwidth=78
+
   " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
 
+  " filetype specific tab/space config
   autocmd BufRead,BufNewFile *.ascx set ai sw=4 sts=4 et
   autocmd FileType ruby,haml,eruby,yaml,cucumber set ai sw=2 sts=2 et
   autocmd FileType php,python,javascript,coffee,sass,css,scss,html set ai sw=4 sts=4 et
 augroup END
+
+
+" colorscheme config
+" map \cscheme to :ShowColourSchemeName
+function! ShowColourSchemeName()
+    try
+        echo g:colors_name
+    catch /^Vim:E121/
+        echo "default
+    endtry
+endfunction
+
+nnoremap <leader>c :call ShowColourSchemeName()<CR>
+
+nnoremap <leader>r :RandomColorScheme<CR> " map \r to :RandomColorScheme
+
+colorscheme obsidian
 
 
 " Control-P config
@@ -306,17 +311,21 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 
-" using Powerline plugin instead
+" custom filetypes
+au BufNewFile,BufRead *.cljs.hl set filetype=clojure
+au BufNewFile,BufRead *.cljs set filetype=clojure
+au BufNewFile,BufRead *.cshtml set filetype=html
+au BufNewFile,BufRead *.json set filetype=javascript
+
+
+" statusline config
 set statusline=%t%h%m%r%=[%b\ 0x%02B]\ \ \ %l,%c%V\ %P
+set laststatus=2 " Always show a status line
+set cmdheight=1 " "make the command line 1 line high
 
-" Always show a status line
-set laststatus=2
 
-" "make the command line 1 line high
-set cmdheight=1
-
-" <space> switches to the next window (give it a second)
-:map <space> <c-W>w
+" split config
+:map <space> <c-W>w " <space> switches to the next window (give it a second)
 
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
@@ -324,33 +333,18 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-" disable folding
-set foldlevelstart=99
-au FileType markdown,mkd setlocal nofoldenable
-
-" disable newline comments
-" http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-au BufNewFile,BufRead *.cshtml set filetype=html
-
-au BufNewFile,BufRead *.cljs set filetype=clojure
-
-au BufNewFile,BufRead *.cljs.hl set filetype=clojure
-
-au BufNewFile,BufRead *.json set ft=javascript
-
-set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
-
 " https://github.com/thoughtbot/dotfiles/blob/master/vimrc
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
 
-set clipboard=unnamed
 
-set synmaxcol=200
+" folding config
+set foldlevelstart=99 " disables folding
+au FileType markdown,mkd setlocal nofoldenable
 
+
+" terminal color config
 if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
   " render properly when inside 256-color tmux and GNU screen.
@@ -361,3 +355,13 @@ endif
 set t_Co=256
 set term=screen-256color
 
+
+" disable newline comments
+" http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+
+set clipboard=unnamed
+
+set synmaxcol=200
