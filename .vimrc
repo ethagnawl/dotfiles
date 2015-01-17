@@ -21,6 +21,7 @@ Bundle 'desert256.vim'
 Bundle 'inkpot'
 Bundle "https://github.com/vim-scripts/atom-dark"
 Bundle "https://github.com/vim-scripts/apprentice.vim"
+Bundle "KabbAmine/yowish.vim"
 
 " clojure plugins
 Bundle 'vim-scripts/VimClojure'
