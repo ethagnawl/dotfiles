@@ -172,6 +172,17 @@ nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
 " leader jumps into command prompt
 nnoremap <leader> :
 
+" map \cscheme to :ShowColourSchemeName
+function! ShowColourSchemeName()
+    try
+        echo g:colors_name
+    catch /^Vim:E121/
+        echo "default
+    endtry
+endfunction
+
+nnoremap <leader>c :call ShowColourSchemeName()<CR>
+
 " map \r to :RandomColorScheme
 nnoremap <leader>r :RandomColorScheme<CR>
 
