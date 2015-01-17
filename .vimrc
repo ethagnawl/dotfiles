@@ -256,6 +256,8 @@ nnoremap <c-l> <c-w>l
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 
+xmap <leader>eval <Plug>SlimeRegionSend
+nmap <leader>eval <Plug>SlimeParagraphSend
 
 " disable folding
 set foldlevelstart=99
