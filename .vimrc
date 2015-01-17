@@ -219,11 +219,10 @@ augroup vimrcEx
   autocmd FileType text setlocal textwidth=78
   " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
 
-  "for ruby, autoindent with two spaces, always expand tabs
   autocmd BufRead,BufNewFile *.ascx set ai sw=4 sts=4 et
   autocmd FileType ruby,haml,eruby,yaml,cucumber set ai sw=2 sts=2 et
   autocmd FileType php,python,javascript,coffee,sass,css,scss,html set ai sw=4 sts=4 et
