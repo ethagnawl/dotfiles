@@ -34,6 +34,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'https://github.com/tpope/vim-jdaddy'
+Bundle 'mxw/vim-jsx'
 
 " ruby plugins
 Bundle 'vim-ruby/vim-ruby'
