@@ -351,7 +351,8 @@ set cmdheight=1 " "make the command line 1 line high
 
 
 " split config
-:map <space> <c-W>w " <space> switches to the next window (give it a second)
+" <space> switches to the next window (give it a second)
+:map <space> <c-W>w
 
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
