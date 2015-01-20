@@ -103,6 +103,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+      . `brew --prefix`/etc/bash_completion
+fi
+
 # setting env variable
 # export JAVA_HOME=/home/pete/SDKs/jdk1.6.0_20
 # export ANT_HOME=/home/pete/web-server/Tools/apache-ant-1.8.0
@@ -130,3 +134,15 @@ shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 export TERM=xterm-256color
+#export PATH=/usr/local/bin:$PATH
+
+##
+# Your previous /Users/pdoherty/.bash_profile file was backed up as /Users/pdoherty/.bash_profile.macports-saved_2014-12-09_at_20:54:05
+##
+
+# MacPorts Installer addition on 2014-12-09_at_20:54:05: adding an appropriate PATH variable for use with MacPorts.
+#export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+
+export PATH="$HOME/Library/Haskell/bin:$PATH"

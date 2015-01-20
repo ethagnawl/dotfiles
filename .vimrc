@@ -53,6 +53,13 @@ Bundle 'plasticboy/vim-markdown'
 " haskell plugins
 Bundle 'git://github.com/urso/haskell_syntax.vim.git'
 Bundle 'https://github.com/lambdatoast/elm.vim'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'Shougo/vimproc.vim'
+
+" git plugins
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+Bundle 'tpope/vim-fugitive'
 
 " tmux plugins
 " autocomplete from tmux with <C-X><C-U>
@@ -61,7 +68,6 @@ Bundle "wellle/tmux-complete.vim"
 " misc plugins
 Bundle 'camelcasemotion'
 Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
 Bundle 'jpalardy/vim-slime'
 Bundle 'svermeulen/vim-extended-ft'
@@ -85,6 +91,8 @@ Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/vim-argwrap'
 Bundle 'mtth/scratch.vim'
 Bundle 'idanarye/vim-casetrate'
+Bundle "https://github.com/vim-scripts/SwapText"
+Bundle "godlygeek/tabular"
 
 :syntax on
 filetype plugin indent on
@@ -94,6 +102,9 @@ set nocompatible
 set encoding=utf-8
 " set colorcolumn=85
 " let g:smart_display_opts = { 'column' : 85 }
+
+" casetrate
+let g:casetrate_leader = '\c'
 
 set ruler
 set showmatch
@@ -151,6 +162,8 @@ set wildmenu
 
 nnoremap <silent> <leader>w :call argwrap#toggle()<CR>
 
+nnoremap <silent> <leader>w :call argwrap#toggle()<CR>
+
 " Edit or view files in same directory as current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
@@ -192,6 +205,9 @@ nnoremap N Nzzzv
 nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(stay_star_view)<cr>
 
 " </losh>
+
+" S acts as the inverse of J - split line at cursor
+nnoremap S i<CR><Esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
@@ -274,6 +290,23 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 
+" folding config
+set foldlevelstart=99 " disables folding
+au FileType markdown,mkd setlocal nofoldenable
+
+
+" disable newline comments
+" http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+
+" custom filetypes
+au BufNewFile,BufRead *.cljs.hl set filetype=clojure
+au BufNewFile,BufRead *.cljs set filetype=clojure
+au BufNewFile,BufRead *.cshtml set filetype=html
+au BufNewFile,BufRead *.json set filetype=javascript
+
+
 " syntastic/jshint config
 let g:syntastic_javascript_checkers = ['jshint']
 
@@ -311,13 +344,6 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 
-" custom filetypes
-au BufNewFile,BufRead *.cljs.hl set filetype=clojure
-au BufNewFile,BufRead *.cljs set filetype=clojure
-au BufNewFile,BufRead *.cshtml set filetype=html
-au BufNewFile,BufRead *.json set filetype=javascript
-
-
 " statusline config
 set statusline=%t%h%m%r%=[%b\ 0x%02B]\ \ \ %l,%c%V\ %P
 set laststatus=2 " Always show a status line
@@ -339,11 +365,6 @@ set splitbelow
 set splitright
 
 
-" folding config
-set foldlevelstart=99 " disables folding
-au FileType markdown,mkd setlocal nofoldenable
-
-
 " terminal color config
 if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
@@ -353,15 +374,37 @@ if &term =~ '256color'
 endif
 
 set t_Co=256
+
 set term=screen-256color
 
 
-" disable newline comments
-" http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" haskell config
+let $PATH = $PATH . ':' . expand('~/.cabal/bin')
 
-set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 
+" clipboard config
 set clipboard=unnamed
 
+
+" vimrc shortucts
+" open .vimrc using \ev
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" source .vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+
+" prevent hangups caused by long lines (i.e. data-uris)
 set synmaxcol=200
+
+
+" change in next parens
+onoremap in( :<c-u>normal! f(vi(<cr>
+
+
+" add semicolon to end of line
+function AddSemicolonToLineEnd()
+  execute "normal! mqA;\<esc>`q"
+endfunction
+
+nnoremap <leader>as :call AddSemicolonToLineEnd()<cr>
