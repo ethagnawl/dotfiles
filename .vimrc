@@ -26,8 +26,11 @@ Bundle "KabbAmine/yowish.vim"
 " clojure plugins
 Bundle 'vim-scripts/VimClojure'
 Bundle "https://github.com/guns/vim-clojure-static"
-" Bundle "git://github.com/tpope/vim-leiningen.git"
-" Bundle "git://github.com/tpope/vim-fireplace.git"
+Bundle "git://github.com/tpope/vim-leiningen.git"
+Bundle "git://github.com/tpope/vim-fireplace.git"
+
+" java plugins
+Bundle "tpope/vim-classpath"
 
 " javascript plugins
 Bundle 'pangloss/vim-javascript'
@@ -231,6 +234,26 @@ augroup vimrcEx
   autocmd FileType ruby,haml,eruby,yaml,cucumber set ai sw=2 sts=2 et
   autocmd FileType php,python,javascript,coffee,sass,css,scss,html set ai sw=4 sts=4 et
 augroup END
+
+
+" vim fireplace config
+
+" ctrl-e => eval selection
+autocmd FileType clojure nnoremap <C-e> :Eval<CR>
+
+" shift+e => eval file
+autocmd FileType clojure nnoremap E :%Eval<CR>
+
+
+" easy align config
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+
+" autoformat config
+noremap <leader>af :Autoformat<CR><CR>
 
 
 " colorscheme config
