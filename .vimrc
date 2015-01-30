@@ -334,6 +334,7 @@ au BufNewFile,BufRead *.cljs.hl set filetype=clojure
 au BufNewFile,BufRead *.cljs set filetype=clojure
 au BufNewFile,BufRead *.cshtml set filetype=html
 au BufNewFile,BufRead *.json set filetype=javascript
+au BufRead,BufNewFile *.es6 setfiletype javascript
 
 
 " syntastic/jshint config
