@@ -101,6 +101,7 @@ Bundle 'mtth/scratch.vim'
 Bundle 'idanarye/vim-casetrate'
 Bundle "https://github.com/vim-scripts/SwapText"
 Bundle "godlygeek/tabular"
+Bundle "tpope/vim-vinegar"
 
 :syntax on
 filetype plugin indent on
