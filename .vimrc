@@ -50,6 +50,7 @@ Bundle 'mattn/emmet-vim'
 
 " css plugins
 Bundle 'ap/vim-css-color'
+Bundle 'groenewege/vim-less'
 
 " markdown plugins
 Bundle 'plasticboy/vim-markdown'
@@ -70,6 +71,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle "wellle/tmux-complete.vim"
 
 " misc plugins
+Bundle "scrooloose/syntastic"
+Bundle "junegunn/vim-easy-align"
+Bundle 'Chiel92/vim-autoformat'
 Bundle 'camelcasemotion'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
