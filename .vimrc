@@ -24,7 +24,6 @@ Bundle "https://github.com/vim-scripts/apprentice.vim"
 Bundle "KabbAmine/yowish.vim"
 
 " clojure plugins
-Bundle 'vim-scripts/VimClojure'
 Bundle "https://github.com/guns/vim-clojure-static"
 Bundle "git://github.com/tpope/vim-leiningen.git"
 Bundle "git://github.com/tpope/vim-fireplace.git"
