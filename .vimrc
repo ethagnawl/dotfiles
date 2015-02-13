@@ -293,8 +293,9 @@ let g:ctrlp_switch_buffer = 0
 " vim slime config
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
-xmap <leader>eval <Plug>SlimeRegionSend
-nmap <leader>eval <Plug>SlimeParagraphSend
+xmap <leader>e <Plug>SlimeRegionSend
+nmap <leader>e <Plug>SlimeParagraphSend
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 
 
 " RainbowParentheses config
