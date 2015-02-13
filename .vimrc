@@ -195,8 +195,12 @@ nnoremap <leader> :
 " kill beep
 set vb t_vb=".
 
-" kill highlights with shift+_
-nnoremap <silent> _ :nohl<CR>
+" map ^C-c to escape, ^C-c works most of the time,
+" but doesn't trigger the InsertLeave event
+inoremap <C-c> <Esc>
+
+" kill search highlights with ^C-c
+nnoremap <silent> <C-c> :nohl<cr><Esc>
 
 " the following were culled from: https://gist.github.com/ethagnawl/c81273ec1c578019eed1
 
