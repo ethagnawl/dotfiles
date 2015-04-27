@@ -169,9 +169,7 @@ set nowb
 " scroll throught autocomplete results
 set wildmenu
 
-nnoremap <silent> <leader>w :call argwrap#toggle()<CR>
-
-nnoremap <silent> <leader>w :call argwrap#toggle()<CR>
+nnoremap <silent> <leader>w :ArgWrap<CR>
 
 " Edit or view files in same directory as current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
