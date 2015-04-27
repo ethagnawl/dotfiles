@@ -50,6 +50,7 @@ Bundle 'mattn/emmet-vim'
 " css plugins
 Bundle 'ap/vim-css-color'
 Bundle 'groenewege/vim-less'
+Bundle 'wavded/vim-stylus'
 
 " markdown plugins
 Bundle 'plasticboy/vim-markdown'
@@ -241,6 +242,7 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.ascx set ai sw=4 sts=4 et
   autocmd FileType ruby,haml,eruby,yaml,cucumber set ai sw=2 sts=2 et
   autocmd FileType php,python,javascript,coffee,sass,css,scss,html set ai sw=4 sts=4 et
+  autocmd BufNewFile,BufReadPost *.styl set filetype=stylus
 augroup END
 
 
