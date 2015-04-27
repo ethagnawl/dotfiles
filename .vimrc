@@ -433,7 +433,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 set synmaxcol=200
 
 
-" change in next parens
+" change in next parens - cin(
 onoremap in( :<c-u>normal! f(vi(<cr>
 
 
