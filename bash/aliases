@@ -240,6 +240,7 @@ alias berc='be rails c'
 alias bers='be rails s'
 alias berdd='be rake db:drop'
 alias berds='be rake db:setup'
+alias bert='be rake test'
 
 function gcbpbc {
   gcb | pbcopy
