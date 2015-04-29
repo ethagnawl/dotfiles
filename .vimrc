@@ -78,7 +78,7 @@ Bundle "scrooloose/syntastic"
 Bundle "junegunn/vim-easy-align"
 Bundle 'Chiel92/vim-autoformat'
 Bundle 'camelcasemotion'
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'jpalardy/vim-slime'
 Bundle 'svermeulen/vim-extended-ft'
