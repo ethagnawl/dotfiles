@@ -19,9 +19,11 @@ Bundle 'https://github.com/jeetsukumaran/vim-mochalatte'
 Bundle 'https://github.com/vim-scripts/candyVirus.vim'
 Bundle 'desert256.vim'
 Bundle 'inkpot'
+Bundle 'vim-scripts/buttercream.vim'
 Bundle "https://github.com/vim-scripts/atom-dark"
 Bundle "https://github.com/vim-scripts/apprentice.vim"
 Bundle "KabbAmine/yowish.vim"
+Bundle "vim-scripts/guicolorscheme.vim"
 
 " clojure plugins
 Bundle "https://github.com/guns/vim-clojure-static"
