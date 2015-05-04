@@ -49,6 +49,7 @@ Bundle 'tpope/vim-endwise'
 " html plugins
 Bundle 'othree/html5.vim'
 Bundle 'mattn/emmet-vim'
+Bundle 'digitaltoad/vim-jade'
 
 " css plugins
 Bundle 'ap/vim-css-color'
