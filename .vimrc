@@ -29,7 +29,7 @@ Bundle "vim-scripts/guicolorscheme.vim"
 Bundle "https://github.com/guns/vim-clojure-static"
 Bundle "git://github.com/tpope/vim-leiningen.git"
 Bundle "git://github.com/tpope/vim-fireplace.git"
-Bundle 'venantius/vim-eastwood'
+" Bundle 'venantius/vim-eastwood'
 
 " java plugins
 Bundle "tpope/vim-classpath"
