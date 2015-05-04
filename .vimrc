@@ -446,3 +446,9 @@ function AddSemicolonToLineEnd()
 endfunction
 
 nnoremap <leader>as :call AddSemicolonToLineEnd()<cr>
+
+
+" macro config
+
+" qq to record, Q to replay
+nmap Q @q
