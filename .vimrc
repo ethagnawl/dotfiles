@@ -337,6 +337,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 
 " custom filetypes
+au BufNewFile,BufRead *.boot set filetype=clojure
 au BufNewFile,BufRead *.cljs.hl set filetype=clojure
 au BufNewFile,BufRead *.cljs set filetype=clojure
 au BufNewFile,BufRead *.cshtml set filetype=html
