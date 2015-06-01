@@ -217,11 +217,11 @@ function rs {
   fi
 }
 
-function cok {
+function bec {
   if [ $# == 0 ]; then
-    bundle exec rake cucumber:ok
+    bundle exec cucumber:ok
   else
-    bundle exec rake cucumber $1
+    bundle exec cucumber $1
   fi
 }
 
