@@ -24,6 +24,7 @@ Bundle "https://github.com/vim-scripts/atom-dark"
 Bundle "https://github.com/vim-scripts/apprentice.vim"
 Bundle "KabbAmine/yowish.vim"
 Bundle "vim-scripts/guicolorscheme.vim"
+Bundle 'NLKNguyen/papercolor-theme'
 
 " clojure plugins
 Bundle "https://github.com/guns/vim-clojure-static"
@@ -282,6 +283,7 @@ nnoremap <leader>c :call ShowColourSchemeName()<CR>
 nnoremap <leader>r :RandomColorScheme<CR> " map \r to :RandomColorScheme
 
 colorscheme obsidian
+colorscheme PaperColor
 
 " Control-P config
 let g:ctrlp_map = '<c-p>'
