@@ -219,7 +219,7 @@ function rs {
 
 function bec {
   if [ $# == 0 ]; then
-    bundle exec cucumber:ok
+    bundle exec cucumber
   else
     bundle exec cucumber $1
   fi
