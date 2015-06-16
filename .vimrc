@@ -55,6 +55,7 @@ Bundle 'digitaltoad/vim-jade'
 " css plugins
 Bundle 'ap/vim-css-color'
 Bundle 'groenewege/vim-less'
+Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'wavded/vim-stylus'
 
 " markdown plugins
