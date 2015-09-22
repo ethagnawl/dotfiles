@@ -36,6 +36,8 @@ Bundle "git://github.com/tpope/vim-fireplace.git"
 Bundle "tpope/vim-classpath"
 
 " javascript plugins
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'itspriddle/vim-jquery'
