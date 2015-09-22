@@ -245,6 +245,7 @@ alias berdd='be rake db:drop'
 alias berds='be rake db:setup'
 alias bert='be rake test'
 alias ber='be rake'
+alias fs='foreman start'
 
 function gcbpbc {
   gcb | pbcopy
