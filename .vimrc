@@ -79,6 +79,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle "wellle/tmux-complete.vim"
 
 " misc plugins
+Bundle "vim-scripts/LargeFile"
 Bundle "scrooloose/syntastic"
 Bundle "junegunn/vim-easy-align"
 Bundle 'Chiel92/vim-autoformat'
