@@ -201,6 +201,7 @@ alias gdcs='git checkout -- .'
 alias gh="git rev-parse HEAD"
 alias gd='git diff'
 alias gds='git diff --stat'
+alias glcf='git diff --name-only --diff-filter=U'
 alias bbrew='bundle exec rake barista:brew'
 alias deployms='bundle exec rake deploy:staging[+]'
 alias deploymb='bundle exec rake deploy:beta[+]'
