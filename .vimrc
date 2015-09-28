@@ -465,3 +465,6 @@ nmap Q @q
 "" enable mouse selection inside vim - as opposed to the terminal
 " http://www.electricmonk.nl/log/2011/04/05/vim-x11-and-the-clipboard-copy-paste/
 set mouse=a
+
+" save + reg to clipboard on exit
+autocmd VimLeave * call system("which xsel && xsel -ib", getreg('+'))
