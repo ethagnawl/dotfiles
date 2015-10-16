@@ -86,7 +86,8 @@ Bundle 'Chiel92/vim-autoformat'
 Bundle 'camelcasemotion'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'bling/vim-airline'
-Bundle 'jpalardy/vim-slime'
+" Bundle 'jpalardy/vim-slime'
+Bundle 'ethagnawl/vim-slime'
 Bundle 'svermeulen/vim-extended-ft'
 Bundle 'tpope/vim-surround'
 Bundle 'https://github.com/vim-scripts/Markology'
@@ -303,7 +304,9 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|target'
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 xmap <leader>e <Plug>SlimeRegionSend
-nmap <leader>e <Plug>SlimeParagraphSend
+" nmap <leader>e <Plug>SlimeParagraphSend
+nmap <leader>e <Plug>SlimeLineSend
+nmap <leader>c <Plug>SlimeConfig
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 
 
