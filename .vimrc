@@ -86,8 +86,7 @@ Bundle 'Chiel92/vim-autoformat'
 Bundle 'camelcasemotion'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'bling/vim-airline'
-" Bundle 'jpalardy/vim-slime'
-Bundle 'ethagnawl/vim-slime'
+Bundle 'jpalardy/vim-slime'
 Bundle 'svermeulen/vim-extended-ft'
 Bundle 'tpope/vim-surround'
 Bundle 'https://github.com/vim-scripts/Markology'
@@ -308,6 +307,7 @@ xmap <leader>e <Plug>SlimeRegionSend
 nmap <leader>e <Plug>SlimeLineSend
 nmap <leader>c <Plug>SlimeConfig
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+let g:slime_dont_ask_default = 1
 
 
 " RainbowParentheses config
