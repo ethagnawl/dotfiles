@@ -286,8 +286,11 @@ nnoremap <leader>scs :call ShowColourSchemeName()<CR>
 
 nnoremap <leader>r :RandomColorScheme<CR> " map \r to :RandomColorScheme
 
-colorscheme obsidian
+" preferred light colorscheme
 colorscheme PaperColor
+
+" preferred dark colorscheme
+colorscheme iceberg
 
 " Control-P config
 let g:ctrlp_map = '<c-p>'
