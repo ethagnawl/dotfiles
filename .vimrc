@@ -282,7 +282,7 @@ function! ShowColourSchemeName()
     endtry
 endfunction
 
-nnoremap <leader>c :call ShowColourSchemeName()<CR>
+nnoremap <leader>scs :call ShowColourSchemeName()<CR>
 
 nnoremap <leader>r :RandomColorScheme<CR> " map \r to :RandomColorScheme
 
