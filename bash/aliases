@@ -292,3 +292,9 @@ alias tl3='tree -L 3'
 alias tmux="TERM=screen-256color-bce tmux"
 
 alias update-and-upgrade="sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove && sudo apt-get autoclean"
+
+# free space in boot partition
+# https://askubuntu.com/questions/89710/how-do-i-free-up-more-space-in-boot
+function free-boot-space {
+  sudo apt-get purge $(dpkg -l linux-{image,headers}-"[0-9]*" | awk '/ii/{print $2}' | grep -ve "$(uname -r | sed -r 's/-[a-z]+//')")
+}
