@@ -108,7 +108,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/vim-argwrap'
 Bundle 'mtth/scratch.vim'
 Bundle 'idanarye/vim-casetrate'
-Bundle "https://github.com/vim-scripts/SwapText"
+Bundle "https://github.com/tommcdo/vim-exchange"
 Bundle "godlygeek/tabular"
 Bundle "tpope/vim-vinegar"
 
