@@ -479,3 +479,10 @@ autocmd VimLeave * call system("which xsel && xsel -ib", getreg('+'))
 " steps of 5, or left and right in half screen-widths
 nmap <c-J> 5j
 nmap <c-K> 5k
+
+" Windows resizing using arrow keys
+" https://github.com/martin-svk/dot-files/blob/master/neovim/init.vim
+nnoremap <silent> <Left> :vertical resize -1<CR>
+nnoremap <silent> <Right> :vertical resize +1<CR>
+nnoremap <silent> <Up> :resize +1<CR>
+nnoremap <silent> <Down> :resize -1<CR>
