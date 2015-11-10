@@ -480,9 +480,31 @@ autocmd VimLeave * call system("which xsel && xsel -ib", getreg('+'))
 nmap <c-J> 5j
 nmap <c-K> 5k
 
+
 " Windows resizing using arrow keys
-" https://github.com/martin-svk/dot-files/blob/master/neovim/init.vim
-nnoremap <silent> <Left> :vertical resize -1<CR>
-nnoremap <silent> <Right> :vertical resize +1<CR>
+" inspired by: github.com/martin-svk/dot-files/blob/master/neovim/init.vim
+
+let g:window_resize_by_n = 5
+
+function! ContextAwareWindowResize(direction)
+
+  let current_window_is_last_window = (winnr() == winnr("$"))
+
+  if (a:direction == 'left')
+    let [modifier_1, modifier_2] = ['+', '-']
+  else
+    let [modifier_1, modifier_2] = ['-', '+']
+  endif
+
+  let modifier = current_window_is_last_window ? modifier_1 : modifier_2
+
+  let command = 'vertical resize ' . modifier . g:window_resize_by_n . '<CR>'
+
+  execute command
+
+endfunction
+
+nnoremap <silent> <Right> :call ContextAwareWindowResize('right')<cr>
+nnoremap <silent> <Left> :call ContextAwareWindowResize('left')<cr>
 nnoremap <silent> <Up> :resize +1<CR>
 nnoremap <silent> <Down> :resize -1<CR>
