@@ -483,10 +483,13 @@ nmap <c-K> 5k
 
 " Windows resizing using arrow keys
 " inspired by: github.com/martin-svk/dot-files/blob/master/neovim/init.vim
+" TODO: figure out workable alt version or kill window_resize_by_n global
 
 let g:window_resize_by_n = 5
 
-function! ContextAwareWindowResize(direction)
+function! ContextAwareVerticalWindowResize(direction, ...)
+
+  let window_resize_by_n = a:0 > 0 ? a:1 : g:window_resize_by_n
 
   let current_window_is_last_window = (winnr() == winnr("$"))
 
@@ -498,13 +501,13 @@ function! ContextAwareWindowResize(direction)
 
   let modifier = current_window_is_last_window ? modifier_1 : modifier_2
 
-  let command = 'vertical resize ' . modifier . g:window_resize_by_n . '<CR>'
+  let command = 'vertical resize ' . modifier . window_resize_by_n . '<CR>'
 
   execute command
 
 endfunction
 
-nnoremap <silent> <Right> :call ContextAwareWindowResize('right')<cr>
-nnoremap <silent> <Left> :call ContextAwareWindowResize('left')<cr>
+nnoremap <silent> <Right> :call ContextAwareVerticalWindowResize('right', 10)<cr>
+nnoremap <silent> <Left> :call ContextAwareVerticalWindowResize('left', 10)<cr>
 nnoremap <silent> <Up> :resize +1<CR>
 nnoremap <silent> <Down> :resize -1<CR>
