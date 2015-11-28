@@ -512,3 +512,7 @@ nnoremap <silent> <Right> :call ContextAwareVerticalWindowResize('right', 10)<cr
 nnoremap <silent> <Left> :call ContextAwareVerticalWindowResize('left', 10)<cr>
 nnoremap <silent> <Up> :resize +1<CR>
 nnoremap <silent> <Down> :resize -1<CR>
+
+
+" use alpha base for ^c-a/x
+set nrformats=alpha
