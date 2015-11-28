@@ -43,6 +43,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'https://github.com/tpope/vim-jdaddy'
 Bundle 'mxw/vim-jsx'
+Bundle 'https://github.com/mustache/vim-mustache-handlebars'
 
 " ruby plugins
 Bundle 'vim-ruby/vim-ruby'
