@@ -115,6 +115,7 @@ Bundle "godlygeek/tabular"
 Bundle "tpope/vim-vinegar"
 Bundle "kana/vim-textobj-user"
 Bundle "kana/vim-textobj-entire"
+Bundle "ConradIrwin/vim-bracketed-paste"
 
 :syntax on
 filetype plugin indent on
