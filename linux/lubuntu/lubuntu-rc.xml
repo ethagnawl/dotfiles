@@ -271,7 +271,7 @@
     </keybind>
     <keybind key="Super-T">
       <action name="Execute">
-        <command>lxterminal -e "bash -il"</command>
+        <command>gnome-terminal -e "bash -il"</command>
       </action>
     </keybind>
     <keybind key="Super-F">
