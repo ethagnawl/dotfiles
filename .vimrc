@@ -124,8 +124,8 @@ filetype plugin indent on
 set showcmd
 set nocompatible
 set encoding=utf-8
-" set colorcolumn=85
-" let g:smart_display_opts = { 'column' : 85 }
+set colorcolumn=80
+let g:smart_display_opts = { 'column' : 80 }
 
 " casetrate
 let g:casetrate_leader = '\c'
