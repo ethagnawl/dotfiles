@@ -521,3 +521,6 @@ nnoremap <silent> <Down> :resize -1<CR>
 
 " use alpha base for ^c-a/x
 set nrformats=alpha
+
+" spelling
+nnoremap <Leader>fs 1z=
