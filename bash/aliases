@@ -180,6 +180,7 @@ function be {
 }
 
 alias which_linux='uname -a'
+alias kaf='killall firefox'
 alias v='vim'
 alias vi='vim'
 alias vm='vim'
