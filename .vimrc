@@ -509,3 +509,6 @@ set nrformats=alpha
 
 " spelling
 nnoremap <Leader>fs 1z=
+
+" abbreviate ':only' as ':qx' - quit all except current
+:ca qx only
