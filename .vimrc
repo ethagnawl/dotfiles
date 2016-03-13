@@ -277,11 +277,11 @@ nnoremap <leader>scs :call ShowColourSchemeName()<CR>
 
 nnoremap <leader>r :RandomColorScheme<CR> " map \r to :RandomColorScheme
 
-" preferred light colorscheme
-colorscheme seoul256-light
-
-" preferred dark colorscheme
-colorscheme seoul256
+let myColorscheme = "seoul256"
+if filereadable(expand("$HOME/.vim/bundle/" . myColorscheme . ".vim/colors/" . myColorscheme . ".vim"))
+  let command = 'colorscheme ' . myColorscheme
+  execute command
+endif
 
 " Control-P config
 let g:ctrlp_map = '<c-p>'
