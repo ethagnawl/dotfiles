@@ -9,23 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " colorscheme plugins
 Bundle 'https://github.com/vim-scripts/vim-colorscheme-switcher'
-Bundle 'https://github.com/flazz/vim-colorschemes'
-Bundle "https://github.com/whatyouhide/vim-gotham"
-Bundle "https://github.com/vim-scripts/cascadia.vim"
-Bundle "nice/sweater"
-Bundle 'tpope/vim-vividchalk'
-Bundle 'vim-scripts/gummybears'
-Bundle 'https://github.com/jeetsukumaran/vim-mochalatte'
-Bundle 'https://github.com/vim-scripts/candyVirus.vim'
-Bundle 'desert256.vim'
-Bundle 'inkpot'
-Bundle 'vim-scripts/buttercream.vim'
-Bundle "https://github.com/vim-scripts/atom-dark"
-Bundle "https://github.com/vim-scripts/apprentice.vim"
-Bundle "KabbAmine/yowish.vim"
-Bundle "vim-scripts/guicolorscheme.vim"
-Bundle 'NLKNguyen/papercolor-theme'
-Bundle "https://github.com/ajgrf/sprinkles"
+Bundle "junegunn/seoul256.vim"
 
 " clojure plugins
 Bundle "https://github.com/guns/vim-clojure-static"
