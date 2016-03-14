@@ -512,3 +512,8 @@ nnoremap <Leader>fs 1z=
 
 " abbreviate ':only' as ':qx' - quit all except current
 :ca qx only
+
+" undo into the past
+set undofile
+set undodir=~/.vim/undodir
+
