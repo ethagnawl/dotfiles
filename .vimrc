@@ -516,10 +516,3 @@ nnoremap <Leader>fs 1z=
 " undo into the past
 set undofile
 set undodir=~/.vim/undodir
-
-" zoom in/out of tmux pane
-if exists('$TMUX')
-  nnoremap <silent> <Leader>z :call system("tmux resize-pane -Z")<CR>
-  nmap <silent> <Plug>SwapTmuxDown :call system("tmux swap-pane -D")<CR>
-    \ :call repeat#set("\<Plug>SwapTmuxDown", v:count)<CR>
-endif
