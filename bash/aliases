@@ -303,3 +303,13 @@ function free-boot-space {
 function mkdcd {
     mkdir $1 && cd $1
 }
+
+# parse issue number out of git branch name and prepend it to git commit message
+#function gaacwbp {
+#  prefix=$( expr match "$(gcb)" '\(^\d+\)' )
+#  if [$prefix -eq ""]; then
+#    gaa && gcommit "$*"
+#  else
+#    gaa && gcommit "\#$prefix - $*"
+#  fi
+#}
