@@ -171,6 +171,10 @@ function gl {
     git log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
 }
 
+function gfu {
+    git fetch upstream
+}
+
 function ts {
     termup start $1
 }
