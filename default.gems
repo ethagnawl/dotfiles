@@ -2,3 +2,4 @@ bundler
 pry
 tmuxinator
 rails
+filewatcher
