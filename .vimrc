@@ -516,3 +516,9 @@ nnoremap <Leader>fs 1z=
 " undo into the past
 set undofile
 set undodir=~/.vim/undodir
+
+" " Use j / k / tab for autocomplete
+" https://www.reddit.com/r/vim/comments/4f79fd/weekly_vim_tips_and_tricks_thread_6/d26k71r
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+inoremap <expr> <tab> ((pumvisible())?("\<Cr>"):("<Cr>"))
