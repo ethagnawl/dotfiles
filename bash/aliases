@@ -298,6 +298,11 @@ alias tmux="TERM=screen-256color-bce tmux"
 
 alias update-and-upgrade="sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove && sudo apt-get autoclean"
 
+alias drm='docker rm'
+alias dcb='docker-compose build'
+alias dcup='docker-compose up'
+alias dcbup='docker-compose build && docker-compose up'
+
 # free space in boot partition
 # https://askubuntu.com/questions/89710/how-do-i-free-up-more-space-in-boot
 function free-boot-space {
