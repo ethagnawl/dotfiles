@@ -102,6 +102,7 @@ Bundle "kana/vim-textobj-user"
 Bundle "kana/vim-textobj-entire"
 Bundle "ConradIrwin/vim-bracketed-paste"
 Bundle "https://github.com/vim-scripts/vim-do"
+Bundle "wlangstroth/vim-racket"
 
 :syntax on
 filetype plugin indent on
