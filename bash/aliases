@@ -302,6 +302,8 @@ alias drm='docker rm'
 alias dcb='docker-compose build'
 alias dcup='docker-compose up'
 alias dcbup='docker-compose build && docker-compose up'
+alias dcrr='docker-compose run --rm app bundle exec rake'
+alias dcrrc='docker-compose run --rm app bundle exec rails console'
 
 # free space in boot partition
 # https://askubuntu.com/questions/89710/how-do-i-free-up-more-space-in-boot
