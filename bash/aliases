@@ -151,6 +151,10 @@ function gpsoc {
     git push origin $(parse_git_branch)
 }
 
+function gpshc {
+    git push heroku $(parse_git_branch)
+}
+
 function gpuc {
     git push upstream $(parse_git_branch)
 }
