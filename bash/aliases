@@ -179,6 +179,11 @@ function gfu {
     git fetch upstream
 }
 
+# list lines +/- in unstaged changes
+function glpm {
+    git diff --stat HEAD
+}
+
 function ts {
     termup start $1
 }
