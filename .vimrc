@@ -291,7 +291,7 @@ let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
-let g:ctrlp_custom_ignore = 'tmp\|elm-stuff\|node_modules\|DS_Store\|git\|target\|www'
+let g:ctrlp_custom_ignore = 'tmp\|elm-stuff\|node_modules\|DS_Store\|git\|target\|www\|cache\|_site'
 
 
 " vim slime config
