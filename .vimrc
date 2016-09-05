@@ -523,3 +523,21 @@ set undodir=~/.vim/undodir
 inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 inoremap <expr> <tab> ((pumvisible())?("\<Cr>"):("<Cr>"))
+
+" prompt for/jump to Nth +/- entry in jumplist
+" http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations
+function! GotoJump()
+  jumps
+  let j = input("Please select your jump: ")
+  if j != ''
+    let pattern = '\v\c^\+'
+    if j =~ pattern
+      let j = substitute(j, pattern, '', 'g')
+      execute "normal " . j . "\<c-i>"
+    else
+      execute "normal " . j . "\<c-o>"
+    endif
+  endif
+endfunction
+
+nmap <Leader>j :call GotoJump()<CR>
