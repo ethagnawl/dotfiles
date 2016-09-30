@@ -30,6 +30,7 @@ alias cd..='cd ..'
 #alias .4='cd ../../../../'
 #alias .5='cd ../../../../..'
 alias cdp='cd ~/projects'
+alias disk_usage='df --total -hl'
 
 # Simulate OSX's pbcopy and pbpaste on other platforms
 if [ ! $(uname -s) = "Darwin" ]; then
