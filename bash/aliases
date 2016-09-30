@@ -206,6 +206,7 @@ alias vundle_install='vim +BundleInstall +qall'
 alias vundle_update='vim +BundleUpdate +qall'
 alias vundle_clean='vim +BundleClean +qall'
 alias gcb="git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'"
+alias gcbcb="gcb | xargs | pbcopy"
 alias gs='git status'
 alias gpom='git push origin master'
 alias gcom='git checkout master'
