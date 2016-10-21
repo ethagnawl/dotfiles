@@ -252,6 +252,8 @@ autocmd FileType clojure nnoremap E :%Eval<CR>
 
 
 " easy align config
+" USAGE: v4jENTERC-x--ENTER (visual highlight 4 lines down,
+""       start EasyAlign, enter regex mode, align on '--'
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
