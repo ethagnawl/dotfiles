@@ -1,108 +1,106 @@
 filetype off " required for vundle
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-execute pathogen#infect()
-
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " colorscheme plugins
-Bundle 'https://github.com/vim-scripts/vim-colorscheme-switcher'
-Bundle "junegunn/seoul256.vim"
+Plug 'vim-colorscheme-switcher'
+Plug 'junegunn/seoul256.vim'
 
 " clojure plugins
-Bundle "https://github.com/guns/vim-clojure-static"
-Bundle "git://github.com/tpope/vim-leiningen.git"
-Bundle "git://github.com/tpope/vim-fireplace.git"
-" Bundle 'venantius/vim-eastwood'
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-leiningen'
+Plug 'tpope/vim-fireplace'
+" Plug 'venantius/vim-eastwood'
 
 " java plugins
-Bundle "tpope/vim-classpath"
+Plug 'tpope/vim-classpath'
 
 " javascript plugins
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'einars/js-beautify'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'itspriddle/vim-jquery'
-Bundle 'https://github.com/tpope/vim-jdaddy'
-Bundle 'mxw/vim-jsx'
-Bundle 'https://github.com/mustache/vim-mustache-handlebars'
+Plug 'itspriddle/vim-jquery'
+Plug 'kchmck/vim-coffee-script'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-jdaddy'
+Plug 'einars/js-beautify'
+Plug 'maksimr/vim-jsbeautify'
 
 " ruby plugins
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-endwise'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-endwise'
 
 " html plugins
-Bundle 'othree/html5.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'digitaltoad/vim-jade'
+Plug 'tpope/vim-haml'
+Plug 'othree/html5.vim'
+Plug 'mattn/emmet-vim'
+Plug 'digitaltoad/vim-jade'
 
 " css plugins
-Bundle 'ap/vim-css-color'
-Bundle 'groenewege/vim-less'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'wavded/vim-stylus'
+Plug 'ap/vim-css-color'
+Plug 'groenewege/vim-less'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'wavded/vim-stylus'
 
 " markdown plugins
-Bundle 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 
 " haskell plugins
-Bundle 'git://github.com/urso/haskell_syntax.vim.git'
-Bundle 'https://github.com/lambdatoast/elm.vim'
-Bundle 'eagletmt/ghcmod-vim'
-Bundle 'Shougo/vimproc.vim'
+Plug 'urso/haskell_syntax.vim'
+Plug 'lambdatoast/elm.vim'
+Plug 'eagletmt/ghcmod-vim'
+" Plug 'Shougo/vimproc.vim'
 
 " git plugins
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'tpope/vim-fugitive'
+" Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+Plug 'tpope/vim-fugitive'
 
 " tmux plugins
 " autocomplete from tmux with <C-X><C-U>
-Bundle "wellle/tmux-complete.vim"
+Plug 'wellle/tmux-complete.vim'
 
 " misc plugins
-Bundle "editorconfig/editorconfig-vim"
-Bundle "vim-scripts/LargeFile"
-Bundle "scrooloose/syntastic"
-Bundle "junegunn/vim-easy-align"
-Bundle 'Chiel92/vim-autoformat'
-Bundle 'camelcasemotion'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'bling/vim-airline'
-Bundle 'jpalardy/vim-slime'
-Bundle 'svermeulen/vim-extended-ft'
-Bundle 'tpope/vim-surround'
-Bundle 'https://github.com/vim-scripts/Markology'
-Bundle 'https://github.com/terryma/vim-expand-region'
-Bundle 'https://github.com/tpope/vim-commentary'
-Bundle 'https://github.com/tpope/vim-unimpaired'
-Bundle 'https://github.com/paradigm/TextObjectify'
-Bundle 'https://github.com/xolox/vim-misc'
-Bundle 'https://github.com/vim-scripts/SmartColumnColor'
-Bundle 'https://github.com/vim-scripts/ReplaceWithRegister'
-Bundle "https://github.com/kien/rainbow_parentheses.vim"
-Bundle 'https://github.com/vim-scripts/ZoomWin'
-Bundle "https://github.com/sickill/vim-pasta"
-Bundle "https://github.com/vim-scripts/matchit.zip"
-Bundle 'calebsmith/vim-lambdify'
-Bundle "nelstrom/vim-visual-star-search"
-Bundle "supertab"
-Bundle 'mileszs/ack.vim'
-Bundle 'vim-scripts/vim-argwrap'
-Bundle 'mtth/scratch.vim'
-Bundle 'idanarye/vim-casetrate'
-Bundle "https://github.com/tommcdo/vim-exchange"
-Bundle "godlygeek/tabular"
-Bundle "tpope/vim-vinegar"
-Bundle "kana/vim-textobj-user"
-Bundle "kana/vim-textobj-entire"
-Bundle "ConradIrwin/vim-bracketed-paste"
-Bundle "https://github.com/vim-scripts/vim-do"
-Bundle "wlangstroth/vim-racket"
+Plug 'bling/vim-airline'
+Plug 'calebsmith/vim-lambdify'
+Plug 'camelcasemotion'
+Plug 'Chiel92/vim-autoformat'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'godlygeek/tabular'
+Plug 'idanarye/vim-casetrate'
+Plug 'jpalardy/vim-slime'
+Plug 'junegunn/vim-easy-align'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-user'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'mileszs/ack.vim'
+Plug 'mtth/scratch.vim'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'paradigm/TextObjectify'
+Plug 'scrooloose/syntastic'
+Plug 'sickill/vim-pasta'
+Plug 'supertab'
+Plug 'svermeulen/vim-extended-ft'
+Plug 'terryma/vim-expand-region'
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'vim-scripts/LargeFile'
+Plug 'vim-scripts/Markology'
+Plug 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'vim-scripts/SmartColumnColor'
+Plug 'vim-scripts/vim-argwrap'
+Plug 'vim-scripts/vim-do'
+Plug 'vim-scripts/ZoomWin'
+Plug 'wlangstroth/vim-racket'
+Plug 'xolox/vim-misc'
+
+call plug#end()
 
 :syntax on
 filetype plugin indent on
