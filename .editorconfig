@@ -1,0 +1,33 @@
+# editorconfig.org
+root = true
+
+[*]
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{
+  clj,
+  cljs,
+  erb,
+  feature,
+  haml,
+  hs,
+  rb,
+  yml
+}]
+indent_size = 2
+
+[*.{
+  coffee,
+  css,
+  jade,
+  js,
+  json,
+  jsx,
+  sass,
+  scss
+}]
+indent_size = 4
