@@ -151,8 +151,8 @@ export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 source ~/.nvm/nvm.sh
 
-export HISTSIZE=10000
+# export HISTSIZE=10000
 
-export HISTFILESIZE=10000
+# export HISTFILESIZE=10000
 
 source ~/.bin/tmuxinator.bash
