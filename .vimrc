@@ -6,6 +6,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-colorscheme-switcher'
 Plug 'junegunn/seoul256.vim'
 
+" QML plugins
+Plug 'peterhoeg/vim-qml'
+
 " clojure plugins
 Plug 'guns/vim-clojure-static'
 Plug 'tpope/vim-leiningen'
