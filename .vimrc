@@ -379,6 +379,8 @@ au BufEnter * call UpdateJsHintConf()
 " syntastic/scss config
 let g:syntastic_scss_checkers = ['scss_lint']
 
+" syntastic racket config
+let g:syntastic_enable_racket_racket_checker=1
 
 " vim-expand-region config
 " http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
