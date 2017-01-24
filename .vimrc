@@ -229,12 +229,12 @@ nnoremap S i<CR><Esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>
 augroup vimrcEx
 
   " Clear all autocmds in the group
-  autocmd!
+  au!
 
-  autocmd FileType text setlocal textwidth=78
+  au FileType text setlocal textwidth=78
 
   " Jump to last cursor position unless it's invalid or in an event handler
-  autocmd BufReadPost *
+  au BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
@@ -244,10 +244,10 @@ augroup END
 " vim fireplace config
 
 " ctrl-e => eval selection
-autocmd FileType clojure nnoremap <C-e> :Eval<CR>
+au FileType clojure nnoremap <C-e> :Eval<CR>
 
 " shift+e => eval file
-autocmd FileType clojure nnoremap E :%Eval<CR>
+au FileType clojure nnoremap E :%Eval<CR>
 
 
 " easy align config
@@ -337,7 +337,7 @@ au FileType markdown,mkd setlocal nofoldenable
 
 " disable newline comments
 " http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 
 " custom filetypes
@@ -465,7 +465,7 @@ nmap Q @q
 set mouse=a
 
 " save + reg to clipboard on exit
-autocmd VimLeave * call system("which xsel && xsel -ib", getreg('+'))
+au VimLeave * call system("which xsel && xsel -ib", getreg('+'))
 
 " Movement key acceleration: Hold down the ctrl key to move up and down in
 " steps of 5, or left and right in half screen-widths
@@ -541,3 +541,5 @@ function! GotoJump()
 endfunction
 
 nmap <Leader>j :call GotoJump()<CR>
+" abbreviations
+au FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
