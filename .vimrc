@@ -152,7 +152,7 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 " remove trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+" au BufWritePre * :%s/\s\+$//e
 
 " disable arrow keys
 noremap  <Up> ""
