@@ -461,6 +461,8 @@ nnoremap <leader>as :call AddSemicolonToLineEnd()<cr>
 " qq to record, Q to replay
 nmap Q @q
 
+" fix recurring typo when quitting all
+cabbrev qA qa
 
 "" enable mouse selection inside vim - as opposed to the terminal
 " http://www.electricmonk.nl/log/2011/04/05/vim-x11-and-the-clipboard-copy-paste/
