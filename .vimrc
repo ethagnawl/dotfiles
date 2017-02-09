@@ -194,6 +194,9 @@ nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
 " leader jumps into command prompt
 nnoremap <leader> :
 
+" leader re forces screen redraw - useful for removing cursor/text artifacts
+nnoremap <leader>re :redraw!<CR>
+
 " kill beep
 set vb t_vb=".
 
