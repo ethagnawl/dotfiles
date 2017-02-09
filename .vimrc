@@ -63,6 +63,9 @@ Plug 'tpope/vim-fugitive'
 " autocomplete from tmux with <C-X><C-U>
 Plug 'wellle/tmux-complete.vim'
 
+" crystal plugins
+Plug 'rhysd/vim-crystal'
+
 " misc plugins
 Plug 'bling/vim-airline'
 Plug 'calebsmith/vim-lambdify'
