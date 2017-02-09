@@ -439,11 +439,12 @@ set clipboard=unnamed
 
 
 " vimrc shortucts
-" open .vimrc using \ev
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
-" source .vimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
+  " open .vimrc using \ev
+  nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+  " source .vimrc
+  nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
 " prevent hangups caused by long lines (i.e. data-uris)
