@@ -463,14 +463,6 @@ endfunction
 nnoremap <leader>as :call AddSemicolonToLineEnd()<cr>
 
 
-" macro config
-
-" qq to record, Q to replay
-nmap Q @q
-
-" fix recurring typo when quitting all
-cabbrev qA qa
-
 "" enable mouse selection inside vim - as opposed to the terminal
 " http://www.electricmonk.nl/log/2011/04/05/vim-x11-and-the-clipboard-copy-paste/
 set mouse=a
@@ -522,9 +514,6 @@ set nrformats=alpha
 " spelling
 nnoremap <Leader>fs 1z=
 
-" abbreviate ':only' as ':qx' - quit all except current
-:ca qx only
-
 " undo into the past
 set undofile
 set undodir=~/.vim/undodir
@@ -554,3 +543,17 @@ endfunction
 nmap <Leader>j :call GotoJump()<CR>
 " abbreviations
 au FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
+
+" macros
+
+  " qq to record, Q to replay
+  nmap Q @q
+
+" abbreviations
+
+  " fix recurring typo when quitting all
+  cnoreabbrev <expr> qA ((getcmdtype() is# ':' && getcmdline() is# 'qA') ? ('qa') : ('qA'))
+
+  " TODO: make this work properly - currently dumps `c qx only` into status bar
+  " :ca qx only
+  cnoreabbrev <expr> qx ((getcmdtype() is# ':' && getcmdline() is# 'qx') ? ('only') : ('qx'))
