@@ -365,3 +365,13 @@ stophistory () {
   PROMPT_COMMAND="bash_prompt_command"
   echo 'History recording stopped.'
 }
+
+# watch for changes to c source file, build and run
+function watch-build-run {
+  local -r watcher=filewatcher
+  if type $watcher >/dev/null 2>&1; then
+    ${watcher} "$1.c" "gcc $1.c -o $1 && ./$1"
+  else
+    echo >&2 "'$watcher' is not installed. Aborting.";
+  fi
+}
