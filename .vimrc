@@ -552,6 +552,9 @@ au FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
 " abbreviations
 
   au FileType c iabbrev askeleton #include <stdio.h><CR><CR>int main() {<CR>printf("k\n");<CR>return 0;<CR>}
+  au FileType c iabbrev aprintf printf("hi\n");
+
+  au FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
 
   " fix recurring typo when quitting all
   cnoreabbrev <expr> qA ((getcmdtype() is# ':' && getcmdline() is# 'qA') ? ('qa') : ('qA'))
