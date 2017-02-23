@@ -562,3 +562,8 @@ au FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
   " TODO: make this work properly - currently dumps `c qx only` into status bar
   " :ca qx only
   cnoreabbrev <expr> qx ((getcmdtype() is# ':' && getcmdline() is# 'qx') ? ('only') : ('qx'))
+
+" autocmds
+
+  " use // style comments instead of /* ... */ in c files
+  autocmd FileType c setlocal commentstring=//%s
