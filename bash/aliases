@@ -320,14 +320,20 @@ alias tl="tmuxinator local"
 alias update-and-upgrade="sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove && sudo apt-get autoclean"
 alias run-security-sweep="cd && sudo chkrootkit"
 
-alias drm='docker rm'
+# Docker Compose
 alias dcb='docker-compose build'
-alias dcup='docker-compose up'
 alias dcbup='docker-compose build && docker-compose up'
-alias dcrr='docker-compose run --rm app bundle exec rake'
+alias dcd='docker-compose down'
+alias dcs='docker-compose stop'
+alias dcup='docker-compose up'
 alias dcrrc='docker-compose run --rm app bundle exec rails console'
+alias dcrr='docker-compose run --rm app bundle exec rake'
 alias dcrrm='docker-compose run --rm app bundle exec rake db:migrate'
 alias dcrrs='docker-compose run --rm app bundle exec rake db:setup'
+alias dclr='docker-compose run --rm app lein repl'
+
+# Docker
+alias drm='docker rm'
 alias delete_docker_images='docker rmi -f $(docker images -q)'
 alias delete_docker_containers='docker rm -f $(docker ps -a -q)'
 alias delete_docker_volumes='docker volume rm $(docker volume ls -q)'
