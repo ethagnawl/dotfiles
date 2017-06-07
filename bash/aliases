@@ -388,3 +388,8 @@ function watch-build-run {
     echo >&2 "'$watcher' is not installed. Aborting.";
   fi
 }
+
+function get-local-ip {
+  ip addr show scope global | grep inet | cut -d' ' -f6 | cut -d/ -f1
+}
+
