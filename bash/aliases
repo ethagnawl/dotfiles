@@ -318,6 +318,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias tl="tmuxinator local"
 
 alias update-and-upgrade="sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove && sudo apt-get autoclean"
+alias run-security-sweep="cd && sudo chkrootkit"
 
 alias drm='docker rm'
 alias dcb='docker-compose build'
