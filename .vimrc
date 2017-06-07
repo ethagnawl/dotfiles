@@ -3,8 +3,8 @@ filetype off " required for vundle
 call plug#begin('~/.vim/plugged')
 
 " colorscheme plugins
-Plug 'vim-colorscheme-switcher'
 Plug 'junegunn/seoul256.vim'
+Plug 'vim-colorscheme-switcher'
 
 " QML plugins
 Plug 'peterhoeg/vim-qml'
@@ -19,40 +19,42 @@ Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-classpath'
 
 " javascript plugins
+Plug 'einars/js-beautify'
 Plug 'itspriddle/vim-jquery'
 Plug 'kchmck/vim-coffee-script'
+Plug 'maksimr/vim-jsbeautify'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-jdaddy'
-Plug 'einars/js-beautify'
-Plug 'maksimr/vim-jsbeautify'
 
 " ruby plugins
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
 
 " html plugins
-Plug 'tpope/vim-haml'
-Plug 'othree/html5.vim'
-Plug 'mattn/emmet-vim'
 Plug 'digitaltoad/vim-jade'
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5.vim'
+Plug 'tpope/vim-haml'
 
 " css plugins
 Plug 'ap/vim-css-color'
-Plug 'groenewege/vim-less'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'groenewege/vim-less'
 Plug 'wavded/vim-stylus'
 
 " markdown plugins
 Plug 'plasticboy/vim-markdown'
 
 " haskell plugins
-Plug 'urso/haskell_syntax.vim'
-Plug 'lambdatoast/elm.vim'
 Plug 'eagletmt/ghcmod-vim'
-" Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim'
+Plug 'urso/haskell_syntax.vim'
+
+" Elm plugins
+Plug 'lambdatoast/elm.vim'
 
 " git plugins
 " Plug 'mattn/webapi-vim'
@@ -74,6 +76,8 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ethagnawl/vim-surround'
+Plug 'FooSoft/vim-argwrap'
 Plug 'godlygeek/tabular'
 Plug 'idanarye/vim-casetrate'
 Plug 'jpalardy/vim-slime'
@@ -81,31 +85,33 @@ Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-user'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'paradigm/TextObjectify'
-Plug 'scrooloose/syntastic'
 Plug 'sickill/vim-pasta'
+Plug 'skywind3000/asyncrun.vim'
 Plug 'supertab'
 Plug 'svermeulen/vim-extended-ft'
 Plug 'terryma/vim-expand-region'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'triglav/vim-visual-increment'
 Plug 'vim-scripts/LargeFile'
-Plug 'vim-scripts/Markology'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'vim-scripts/SmartColumnColor'
-Plug 'FooSoft/vim-argwrap'
 Plug 'vim-scripts/vim-do'
 Plug 'vim-scripts/ZoomWin'
 Plug 'wlangstroth/vim-racket'
 Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-reload'
+" Plug 'vim-scripts/Markology'
+" Plug 'scrooloose/syntastic'
 
 call plug#end()
 
