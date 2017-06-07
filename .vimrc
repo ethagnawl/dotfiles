@@ -579,3 +579,7 @@ au FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
 
   " use // style comments instead of /* ... */ in c files
   autocmd FileType c setlocal commentstring=//%s
+
+" autocomplete kebab-case words i.e. send-email
+set iskeyword+=-
+
