@@ -468,6 +468,12 @@ endfunction
 
 nnoremap <leader>as :call AddSemicolonToLineEnd()<cr>
 
+" add comma to end of line
+function AddCommaToLineEnd()
+  execute "normal! mqA,\<esc>`q"
+endfunction
+
+nnoremap <leader>ac :call AddCommaToLineEnd()<cr>
 
 "" enable mouse selection inside vim - as opposed to the terminal
 " http://www.electricmonk.nl/log/2011/04/05/vim-x11-and-the-clipboard-copy-paste/
