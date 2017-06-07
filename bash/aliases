@@ -393,3 +393,7 @@ function get-local-ip {
   ip addr show scope global | grep inet | cut -d' ' -f6 | cut -d/ -f1
 }
 
+function ts {
+  args=$@
+  tmux send-keys -t right "$args" C-m
+}
