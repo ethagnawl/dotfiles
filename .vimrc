@@ -2,6 +2,10 @@ filetype off " required for vundle
 
 call plug#begin('~/.vim/plugged')
 
+" C/C++
+" Plug 'WolfgangMehner/c-support'
+
+
 " colorscheme plugins
 Plug 'junegunn/seoul256.vim'
 Plug 'vim-colorscheme-switcher'
@@ -12,7 +16,7 @@ Plug 'peterhoeg/vim-qml'
 " clojure plugins
 Plug 'guns/vim-clojure-static'
 Plug 'tpope/vim-leiningen'
-Plug 'tpope/vim-fireplace'
+" Plug 'tpope/vim-fireplace'
 " Plug 'venantius/vim-eastwood'
 
 " java plugins
