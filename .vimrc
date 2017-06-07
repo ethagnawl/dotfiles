@@ -486,11 +486,6 @@ set mouse=a
 " save + reg to clipboard on exit
 au VimLeave * call system("which xsel && xsel -ib", getreg('+'))
 
-" Movement key acceleration: Hold down the ctrl key to move up and down in
-" steps of 5, or left and right in half screen-widths
-nmap <c-J> 5j
-nmap <c-K> 5k
-
 
 " Windows resizing using arrow keys
 " inspired by: github.com/martin-svk/dot-files/blob/master/neovim/init.vim
