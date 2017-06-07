@@ -86,6 +86,11 @@ function fifpa {
     grep -RnisI -A 3 -B 3 "$*" *
 }
 
+# https://stackoverflow.com/questions/16292750/use-output-of-two-greps-with-diff
+function fifd {
+    diff <(fifp $1) <(fifp $2)
+}
+
 function count_lines {
     find *"$*" -print0 | xargs -0 wc -l
 }
