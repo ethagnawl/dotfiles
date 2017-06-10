@@ -302,7 +302,7 @@ endif
 
 " Control-P config
 let g:ctrlp_by_filename = 0
-let g:ctrlp_custom_ignore = 'tmp\|elm-stuff\|node_modules\|DS_Store\|git\|target\|www\|cache\|_site'
+let g:ctrlp_custom_ignore = 'tmp\|elm-stuff\|node_modules\|DS_Store\|git\|target\|www\|cache\|_site\|.stack-work'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
