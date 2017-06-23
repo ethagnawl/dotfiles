@@ -600,4 +600,4 @@ function! FindClosestMediaQuery()
   endtry
 endfunction
 
-autocmd FileType stylesheet,css,scss nnoremap <buffer> <silent> <leader>mq :call FindClosestMediaQuery()<CR>
+autocmd FileType stylesheet,css,scss nnoremap <silent> <leader>mq :call FindClosestMediaQuery()<CR>
