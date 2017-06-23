@@ -582,3 +582,22 @@ au FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
 " autocomplete kebab-case words i.e. send-email
 set iskeyword+=-
 
+function! FindClosestMediaQuery()
+  "" TODO:
+  "" - ensure cursor is inside MQ
+  "" - add output to statusline (on cursor move?)
+  "" - handle nested queries
+  let error_message = "Unable to find media query!"
+  try
+    let line_number = search("@media", "bnW")
+    if line_number == 0
+      echo error_message
+    else
+      echo getline(line_number)
+    endif
+  catch
+    echo error_message
+  endtry
+endfunction
+
+autocmd FileType stylesheet,css,scss nnoremap <buffer> <silent> <leader>mq :call FindClosestMediaQuery()<CR>
