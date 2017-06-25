@@ -582,22 +582,54 @@ au FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
 " autocomplete kebab-case words i.e. send-email
 set iskeyword+=-
 
-function! FindClosestMediaQuery()
+" TODO: investigate the following:
+" https://dougblack.io/words/a-good-vimrc.html
+" nnoremap gV `[v`]
+" autocmd BufEnter Makefile setlocal noexpandtab
+" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" nnoremap <leader>u :GundoToggle<CR>
+
+"" copy to end of line
+"nnoremap Y y$
+"" copy to system clipboard
+"nnoremap gy "+y
+"" copy whole file to system clipboard
+"nnoremap gY gg"+yG
+
+function! FindContainingMediaQuery()
   "" TODO:
-  "" - ensure cursor is inside MQ
-  "" - add output to statusline (on cursor move?)
   "" - handle nested queries
-  let error_message = "Unable to find media query!"
+  "" - add output to statusline (on cursor move?)
+  let error_message = "Unable to find media query."
+  let target_line_number = line(".")
+  let target_cursor_position = getpos(".")
+
   try
-    let line_number = search("@media", "bnW")
-    if line_number == 0
+    let mq_start_line_number = search("@media", "bW")
+
+    if mq_start_line_number == 0
       echo error_message
     else
-      echo getline(line_number)
+
+      " Seems to be required in order to find the appropriate closing brace.
+      " If searchpair is executed from mq_start_line_number, it finds the MQ's
+      " containing bracket pair.
+      exec "normal $"
+
+      let mq = getline(mq_start_line_number)
+      let mq_pretty = substitute(mq, '^\s*\(.\{-}\)\s*$', '\1', '')
+      let mq_end_line_number = searchpair("{", "", "}", "nW")
+      if (target_line_number > mq_start_line_number && target_line_number < mq_end_line_number)
+        echo mq_pretty
+      else
+        echo error_message
+      endif
     endif
   catch
     echo error_message
+  finally
+    call setpos('.', target_cursor_position)
   endtry
 endfunction
 
-autocmd FileType stylesheet,css,scss nnoremap <silent> <leader>mq :call FindClosestMediaQuery()<CR>
+autocmd FileType stylesheet,css,scss nnoremap <silent> <leader>mq :call FindContainingMediaQuery()<CR>
