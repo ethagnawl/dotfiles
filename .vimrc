@@ -608,7 +608,7 @@ function! FindContainingMediaQuery()
     let mq_start_line_number = search("@media", "bW")
 
     if mq_start_line_number == 0
-      echo error_message
+      return ""
     else
 
       " Seems to be required in order to find the appropriate closing brace.
@@ -617,19 +617,25 @@ function! FindContainingMediaQuery()
       exec "normal $"
 
       let mq = getline(mq_start_line_number)
-      let mq_pretty = substitute(mq, '^\s*\(.\{-}\)\s*$', '\1', '')
+      let mq_pretty = "MQ: " . substitute(mq, '^\s*\(.\{-}\)\s*$', '\1', '') . "...}"
       let mq_end_line_number = searchpair("{", "", "}", "nW")
       if (target_line_number > mq_start_line_number && target_line_number < mq_end_line_number)
-        echo mq_pretty
+        return mq_pretty
       else
-        echo error_message
+        return ""
       endif
     endif
   catch
-    echo error_message
+    echoerr error_message
+    return ""
   finally
     call setpos('.', target_cursor_position)
   endtry
 endfunction
 
-autocmd FileType stylesheet,css,scss nnoremap <silent> <leader>mq :call FindContainingMediaQuery()<CR>
+function! EchoContainingMediaQuery()
+  echo FindContainingMediaQuery()
+endfunction
+
+autocmd FileType stylesheet,css,scss nnoremap <silent> <leader>mq :call EchoContainingMediaQuery()<CR>
+" autocmd FileType stylesheet,css,scss call airline#parts#define_function('display_containing_media_query', 'FindContainingMediaQuery')
