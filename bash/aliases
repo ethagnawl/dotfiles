@@ -15,6 +15,7 @@ alias nh='nautilus .'
 alias fh='open .'
 alias gtest='ping google.com'
 
+alias cot='cat'
 alias c='clear'
 alias cddf='cd ~/bin/dotfiles/'
 alias cdw='cd /var/www'
