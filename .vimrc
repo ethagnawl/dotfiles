@@ -469,18 +469,27 @@ onoremap in( :<c-u>normal! f(vi(<cr>
 
 
 " add semicolon to end of line
-function AddSemicolonToLineEnd()
+function! AddSemicolonToLineEnd()
+  " mq => `q creates/moves to mark q
   execute "normal! mqA;\<esc>`q"
 endfunction
 
 nnoremap <leader>as :call AddSemicolonToLineEnd()<cr>
 
 " add comma to end of line
-function AddCommaToLineEnd()
+function! AddCommaToLineEnd()
   execute "normal! mqA,\<esc>`q"
 endfunction
 
 nnoremap <leader>ac :call AddCommaToLineEnd()<cr>
+
+" add deriving (Eq, Show) to end of line
+function! AddDerivingToLineEnd()
+  execute "normal! mqA deriving (Eq, Show)\<esc>`q"
+endfunction
+
+nnoremap <leader>ads :call AddDerivingToLineEnd()<cr>
+
 
 "" enable mouse selection inside vim - as opposed to the terminal
 " http://www.electricmonk.nl/log/2011/04/05/vim-x11-and-the-clipboard-copy-paste/
