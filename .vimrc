@@ -363,10 +363,13 @@ au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 au BufNewFile,BufRead *.boot set filetype=clojure
 au BufNewFile,BufRead *.cljs.hl set filetype=clojure
 au BufNewFile,BufRead *.cljs set filetype=clojure
+
 au BufNewFile,BufRead *.cshtml set filetype=html
+
+au BufNewFile,BufRead *.es6 set filetype=javascript
 au BufNewFile,BufRead *.json set filetype=javascript
-au BufRead,BufNewFile *.es6 setfiletype javascript
-au BufNewFile,BufReadPost *.styl set filetype=stylus
+
+au BufNewFile,BufRead *.styl set filetype=stylus
 
 
 " syntastic/jshint config
@@ -412,7 +415,6 @@ vmap <C-v> <Plug>(expand_region_shrink)
 set statusline=%t%h%m%r%=[%b\ 0x%02B]\ \ \ %l,%c%V\ %P
 set laststatus=2 " Always show a status line
 set cmdheight=1 " "make the command line 1 line high
-
 
 " split config
 " <space> switches to the next window (give it a second)
@@ -564,8 +566,6 @@ function! GotoJump()
 endfunction
 
 nmap <Leader>j :call GotoJump()<CR>
-" abbreviations
-au FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
 
 " macros
 
@@ -579,8 +579,8 @@ au FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
 
   au FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
 
-  au FileType haskell iabbrev adebugger print $
   au FileType elm iabbrev adebugger Debug.log (toString model)
+  au FileType haskell iabbrev adebugger print $
   au FileType javascript,coffee iabbrev adebugger debugger
   au FileType ruby iabbrev adebugger binding.pry
 
