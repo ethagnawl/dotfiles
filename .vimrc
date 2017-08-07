@@ -392,7 +392,7 @@ function UpdateJsHintConf()
     let g:syntastic_javascript_jshint_args = l:jshintrc
 endfunction
 
-au BufEnter * call UpdateJsHintConf()
+au BufEnter *.js call UpdateJsHintConf()
 
 
 " syntastic/scss config
