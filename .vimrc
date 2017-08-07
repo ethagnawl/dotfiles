@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 " colorscheme plugins
 Plug 'junegunn/seoul256.vim'
-Plug 'vim-colorscheme-switcher'
+Plug 'xolox/vim-colorscheme-switcher'
 
 " QML plugins
 Plug 'peterhoeg/vim-qml'
@@ -58,7 +58,7 @@ Plug 'Shougo/vimproc.vim'
 Plug 'urso/haskell_syntax.vim'
 
 " Elm plugins
-Plug 'lambdatoast/elm.vim'
+Plug 'elmcast/elm-vim'
 
 " git plugins
 " Plug 'mattn/webapi-vim'
@@ -75,7 +75,7 @@ Plug 'rhysd/vim-crystal'
 " misc plugins
 Plug 'bling/vim-airline'
 Plug 'calebsmith/vim-lambdify'
-Plug 'camelcasemotion'
+Plug 'vim-scripts/camelcasemotion'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -96,7 +96,7 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'paradigm/TextObjectify'
 Plug 'sickill/vim-pasta'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'supertab'
+Plug 'ervandew/supertab'
 Plug 'svermeulen/vim-extended-ft'
 Plug 'terryma/vim-expand-region'
 Plug 'tommcdo/vim-exchange'
