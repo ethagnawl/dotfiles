@@ -341,6 +341,9 @@ alias delete_docker_images='docker rmi -f $(docker images -q)'
 alias delete_docker_containers='docker rm -f $(docker ps -a -q)'
 alias delete_docker_volumes='docker volume rm $(docker volume ls -q)'
 
+# Date
+alias udate='date +%s'
+
 # free space in boot partition
 # https://askubuntu.com/questions/89710/how-do-i-free-up-more-space-in-boot
 function free-boot-space {
