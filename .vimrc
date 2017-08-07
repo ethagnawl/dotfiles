@@ -278,6 +278,9 @@ nmap ga <Plug>(EasyAlign)
 " autoformat config
 noremap <leader>af :Autoformat<CR><CR>
 
+let g:formatdef_elmformat = '"elm-format --stdin --yes"'
+let g:formatters_elm = ['elmformat']
+
 
 " colorscheme config
 " map \cscheme to :ShowColourSchemeName
