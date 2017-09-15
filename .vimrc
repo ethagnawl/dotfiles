@@ -579,10 +579,13 @@ nmap <Leader>j :call GotoJump()<CR>
 
   au FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
 
+  au FileType css,sass,scss,stylesheet iabbrev afbleed bottom: 0;<CR>left: 0;<CR>position: absolute;<CR>right: 0;<CR>top: 0;
+
+  au FileType css,sass,scss,stylesheet iabbrev adebugger color: #bada55;
   au FileType elm iabbrev adebugger Debug.log (toString model)
   au FileType haskell iabbrev adebugger print $
   au FileType javascript,coffee iabbrev adebugger debugger
-  au FileType ruby iabbrev adebugger binding.pry
+  au FileType ruby iabbrev adebugger byebug.pry
 
   " fix recurring typo when quitting all
   cnoreabbrev <expr> qA ((getcmdtype() is# ':' && getcmdline() is# 'qA') ? ('qa') : ('qA'))
