@@ -303,7 +303,7 @@ nnoremap <leader>scs :call ShowColourSchemeName()<CR>
 nnoremap <leader>r :RandomColorScheme<CR> " map \r to :RandomColorScheme
 
 let myColorscheme = "seoul256"
-if filereadable(expand("$HOME/.vim/bundle/" . myColorscheme . ".vim/colors/" . myColorscheme . ".vim"))
+if filereadable(expand("$HOME/.vim/plugged/" . myColorscheme . ".vim/colors/" . myColorscheme . ".vim"))
   let command = 'colorscheme ' . myColorscheme
   execute command
 endif
