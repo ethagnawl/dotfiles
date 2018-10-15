@@ -201,6 +201,7 @@ function be {
 
 alias which_linux='uname -a'
 alias which_debian='cat /etc/issue && cat /etc/debian_version'
+alias which_ubuntu='lsb_release -a'
 alias which_distro='cat /etc/*release'
 alias kaf='killall firefox'
 alias v='vim'
