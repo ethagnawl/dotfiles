@@ -85,6 +85,10 @@ bindsym $mod+period layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
+bindsym $mod+Shift+x --release sticky enable
+bindsym $mod+Shift+y --release sticky disable
+bindsym $mod+Shift+z --release sticky disable
+
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
@@ -154,7 +158,13 @@ bindsym $mod+p mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+  status_command i3status
+  colors {
+    statusline #AAAAAA
+    background #333333
+    focused_workspace #282828 #282828 #FFFFFF
+    inactive_workspace #333333 #333333 #AAAAAA
+  }
 }
 
 # Pulse Audio controls
@@ -165,3 +175,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+client.unfocused #333333 #333333 #FFFFFF #333333
+client.focused_inactive #333333 #333333 #FFFFFF #000000
+client.focused #000000 #000000 #FFFFFF #000000
