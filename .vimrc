@@ -580,6 +580,8 @@ nmap <Leader>j :call GotoJump()<CR>
 
 " abbreviations
 
+  au FileType sh iabbrev askeleton #!/usr/bin/env bash<CR><CR>set -euo pipefail<CR>IFS=$'\n\t<CR>
+
   au FileType c iabbrev askeleton #include <stdio.h><CR><CR>int main() {<CR>printf("k\n");<CR>return 0;<CR>}
   au FileType c iabbrev aprintf printf("hi\n");
 
