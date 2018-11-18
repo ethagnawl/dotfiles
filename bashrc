@@ -149,6 +149,8 @@ export TERM=xterm-256color
 
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 
+export PATH="$PATH:/snap/bin"
+
 source ~/.nvm/nvm.sh
 
 # export HISTSIZE=10000
