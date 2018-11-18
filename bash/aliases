@@ -15,6 +15,11 @@ alias nh='nautilus .'
 alias fh='open .'
 alias gtest='ping google.com'
 
+alias ebashrc='vim ~/.bashrc'
+alias sbashrc='source ~/.bashrc'
+
+alias mkae='make'
+alias mke='make'
 alias cot='cat'
 alias c='clear'
 alias cddf='cd ~/bin/dotfiles/'
@@ -158,6 +163,10 @@ function gpsoc {
     git push origin $(parse_git_branch)
 }
 
+function gurm {
+    git add README.md && gcommit "update README.md" && gpsoc
+}
+
 function gpshc {
     git push heroku $(parse_git_branch)
 }
@@ -191,6 +200,10 @@ function glpm {
     git diff --stat HEAD
 }
 
+function gaacb {
+    gaac $(gcb) - "$*"
+}
+
 function ts {
     termup start $1
 }
@@ -212,6 +225,7 @@ alias vem='vim'
 alias vmi='vim'
 alias vwi='vim'
 alias vimnone='vim -u NONE'
+alias vimmake='vim -u NONE Makefile'
 alias vundle_install='vim +BundleInstall +qall'
 alias vundle_update='vim +BundleUpdate +qall'
 alias vundle_clean='vim +BundleClean +qall'
@@ -403,4 +417,8 @@ function get-local-ip {
 function ts {
   args=$@
   tmux send-keys -t right "$args" C-m
+}
+
+function iown {
+  sudo chown -R $(whoami) ./*
 }
