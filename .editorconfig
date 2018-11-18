@@ -8,26 +8,15 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{
-  clj,
-  cljs,
-  erb,
-  feature,
-  haml,
-  hs,
-  rb,
-  yml
-}]
+[*.{js,css}]
+indent_size = 4
+
+[*.{rb, erb, haml, feature, clj, cljs}]
 indent_size = 2
 
-[*.{
-  coffee,
-  css,
-  jade,
-  js,
-  json,
-  jsx,
-  sass,
-  scss
-}]
+[*.{html, js, jsx, jade, coffee, css, sass, scss}]
+indent_size = 4
+
+# adding the following to the preceding array wouldn't work
+[*.{c, h}]
 indent_size = 4

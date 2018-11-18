@@ -163,6 +163,10 @@ function gpsoc {
     git push origin $(parse_git_branch)
 }
 
+function gurm {
+    git add README.md && gcommit "update README.md" && gpsoc
+}
+
 function gpshc {
     git push heroku $(parse_git_branch)
 }
@@ -194,6 +198,10 @@ function gfu {
 # list lines +/- in unstaged changes
 function glpm {
     git diff --stat HEAD
+}
+
+function gaacb {
+    gaac $(gcb) - "$*"
 }
 
 function ts {
@@ -409,4 +417,8 @@ function get-local-ip {
 function ts {
   args=$@
   tmux send-keys -t right "$args" C-m
+}
+
+function iown {
+  sudo chown -R $(whoami) ./*
 }
