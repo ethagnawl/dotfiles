@@ -15,6 +15,8 @@ alias nh='nautilus .'
 alias fh='open .'
 alias gtest='ping google.com'
 
+alias ebashrc='vim ~/.bashrc'
+alias sbashrc='source ~/.bashrc'
 alias cot='cat'
 alias c='clear'
 alias cddf='cd ~/bin/dotfiles/'
