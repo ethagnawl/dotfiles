@@ -157,6 +157,9 @@ set encoding=utf-8
 set colorcolumn=80
 let g:smart_display_opts = { 'column' : 80 }
 
+"" rust
+let g:rustfmt_autosave = 1
+
 " casetrate
 let g:casetrate_leader = '\c'
 
