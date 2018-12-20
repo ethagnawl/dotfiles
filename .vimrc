@@ -15,9 +15,9 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " colorscheme plugins
+Plug 'Haron-Prime/evening_vim'
 Plug 'junegunn/seoul256.vim'
 " Plug 'xolox/vim-colorscheme-switcher'
-Plug 'Haron-Prime/evening_vim'
 " Plug 'kamwitsta/flatwhite-vim'
 
 " QML plugins
@@ -74,7 +74,7 @@ Plug 'urso/haskell_syntax.vim'
 Plug 'elmcast/elm-vim'
 
 " git plugins
-" Plug 'mattn/webapi-vim'
+Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/webapi-vim'
@@ -88,6 +88,9 @@ Plug 'rhysd/vim-crystal'
 
 " C plugins
 " Plug 'WolfgangMehner/c-support'
+
+" Rust plugins
+Plug 'rust-lang/rust.vim'
 
 " lisp plugins
 Plug 'wlangstroth/vim-racket'
@@ -115,6 +118,7 @@ Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'paradigm/TextObjectify'
+Plug 'scrooloose/syntastic'
 Plug 'sickill/vim-pasta'
 Plug 'sk1418/HowMuch'
 Plug 'skywind3000/asyncrun.vim'
@@ -135,7 +139,6 @@ Plug 'vim-scripts/vim-do'
 Plug 'xolox/vim-misc'
 " Plug 'junegunn/vim-peekaboo'
 " Plug 'lambdalisue/vim-pyenv'
-" Plug 'scrooloose/syntastic'
 " Plug 'spolu/dwm.vim'
 " Plug 'vim-scripts/Markology'
 " Plug 'vim-scripts/ZoomWin'
