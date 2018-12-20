@@ -200,7 +200,7 @@ set incsearch                   " incremental searching
 set smartcase                   " ... unless they contain at least one capital letter
 
 " remove trailing whitespace
-" au BufWritePre * :%s/\s\+$//e
+au BufWritePre * :%s/\s\+$//e
 
 " disable arrow keys
 " noremap  <Up> ""
