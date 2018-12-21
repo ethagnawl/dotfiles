@@ -2,3 +2,5 @@
 
 ## TODO
 - figure out why "eternal bash history" isn't working or is being reset periodically 
+- sync ranger conf
+- sync ~/.config?
