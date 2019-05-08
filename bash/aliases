@@ -210,10 +210,6 @@ function gaacb {
     gaac $(gcb) - "$*"
 }
 
-function ts {
-    termup start $1
-}
-
 function be {
     bundle exec "$*"
 }
