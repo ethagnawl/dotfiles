@@ -9,7 +9,10 @@ fi
 
 export EDITOR='vim'
 
+
 alias node="env NODE_NO_READLINE=1 rlwrap node"
+
+alias grep=egrep
 
 alias nh='nautilus .'
 alias fh='open .'
