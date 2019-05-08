@@ -425,3 +425,20 @@ function ts {
 function iown {
   sudo chown -R $(whoami) ./*
 }
+
+BRIGHTNESS_DEVICE="/sys/class/backlight/intel_backlight/brightness"
+
+function reduce-brightness {
+  local OLD_BRIGHTNESS=$(cat $BRIGHTNESS_DEVICE)
+  local NEW_BRIGHTNESS=$(($OLD_BRIGHTNESS / 2))
+  echo $NEW_BRIGHTNESS > $BRIGHTNESS_DEVICE
+}
+
+function increase-brightness {
+  local MAX_BRIGHTNESS=4437
+  local OLD_BRIGHTNESS=$(cat $BRIGHTNESS_DEVICE)
+  local MAYBE_NEW_BRIGHTNESS=$(($OLD_BRIGHTNESS * 2))
+  if  (($MAYBE_NEW_BRIGHTNESS <= $MAX_BRIGHTNESS)); then
+    echo $MAYBE_NEW_BRIGHTNESS > $BRIGHTNESS_DEVICE
+  fi
+}
