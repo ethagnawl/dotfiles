@@ -280,7 +280,6 @@ alias bi='bundle install'
 alias bu='bundle update'
 alias gemfile="touch Gemfile && echo \"source 'https://rubygems.org'\" >> Gemfile"
 alias pbc='pbcopy'
-alias scd='python -m SimpleHTTPServer'
 alias irbs='irb --simple-prompt'
 alias rc='pry'
 alias berc='be rails c'
@@ -291,6 +290,11 @@ alias berds='be rake db:setup'
 alias bert='be rake test'
 alias ber='be rake'
 alias fs='foreman start'
+
+function scd {
+  local port=$1 || 8000
+  python -m SimpleHTTPServer $port
+}
 
 function gcbpbc {
   gcb | pbcopy
