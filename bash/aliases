@@ -79,11 +79,11 @@ function fn {
 }
 
 function fif {
-    grep -lir "$*" *
+    grep --exclude-dir={__pycache__,node_modules,elm-stuff} -lir "$*" *
 }
 
 function fifp {
-    grep -RnisI "$*" *
+    grep --exclude-dir={__pycache__,node_modules,elm-stuff} -RnisI "$*" *
 }
 
 function fifvo {
