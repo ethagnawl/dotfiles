@@ -72,7 +72,7 @@ function countfs {
 
 # sum size of files in . -r (MB)
 alias cdsize='du -ch | grep total'
-alias lsmb='ls -lh'
+alias lsmb='ls -lh -S'
 
 function fn {
   find . -name $1
