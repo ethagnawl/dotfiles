@@ -296,6 +296,12 @@ function scd {
   python -m SimpleHTTPServer $port
 }
 
+function ngrok-serve {
+  local port=$1 || 8000
+  echo "start ngrok tunnel pointing to localhost:$port"
+  ngrok http $port --subdomain=pdoherty926
+}
+
 function gcbpbc {
   gcb | pbcopy
 }
