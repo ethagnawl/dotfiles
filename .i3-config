@@ -201,3 +201,5 @@ exec --no-startup-id xautolock -time 11 -locker "slock"
 
 # always start in floating mode
 for_window [class="Keepassx"] floating enable
+
+hide_edge_borders smart
