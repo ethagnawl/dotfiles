@@ -4,4 +4,5 @@
 - figure out why "eternal bash history" isn't working or is being reset periodically/biffs history indexing (!222)
 - sync ranger conf
 - sync ~/.config?
+- figure out how to get grep to exclude multiple extensions using glob
 - move commonly excluded grep dirs into variable
