@@ -14,14 +14,20 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+" FZF
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
+
 " colorscheme plugins
 Plug 'Haron-Prime/evening_vim'
 Plug 'junegunn/seoul256.vim'
 " Plug 'xolox/vim-colorscheme-switcher'
 " Plug 'kamwitsta/flatwhite-vim'
 
-" QML plugins
-" Plug 'peterhoeg/vim-qml'
+" Python plugins
+Plug 'nvie/vim-flake8', {'for': 'python'}
+Plug 'vim-python/python-syntax', {'for': 'python'}
+Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
 
 " clojure plugins
 Plug 'guns/vim-clojure-static'
@@ -361,17 +367,21 @@ endif
 
 
 " Control-P config
-let g:ctrlp_by_filename = 0
-let g:ctrlp_custom_ignore = 'tmp\|elm-stuff\|node_modules\|DS_Store\|\.git\|target\|www\|cache\|_site\|.stack-work'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_switch_buffer = 0
+" let g:ctrlp_by_filename = 0
+" let g:ctrlp_custom_ignore = {
+"   \ 'file': '\v\.(pyc)$',
+"   \ 'dir': 'build_env\|tmp\|elm-stuff\|node_modules\|DS_Store\|\.git\|target\|www\|cache\|_site\|.stack-work\|sitepackages\|storage\|.storage',
+"   \}
+" let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_match_window_bottom = 0
+" let g:ctrlp_match_window_reversed = 0
+" let g:ctrlp_show_hidden = 1
+" let g:ctrlp_switch_buffer = 0
+" let g:ctrlp_working_path_mode = 0
 
 " vim-pasta config
 " https://github.com/ctrlpvim/ctrlp.vim/issues/447
-let g:pasta_disabled_filetypes = ['ctrlp']
+" let g:pasta_disabled_filetypes = ['ctrlp']
 
 
 " vim slime config
@@ -651,6 +661,10 @@ nmap <Leader>j :call GotoJump()<CR>
 
 " macros
 
+  " Do not redraw screen in the middle of a macro. Makes them complete faster.
+  " https://www.hillelwayne.com/post/intermediate-vim/
+  set lazyredraw
+
   " qq to record, Q to replay
   nmap Q @q
 
@@ -678,6 +692,20 @@ nmap <Leader>j :call GotoJump()<CR>
   autocmd FileType haskell iabbrev adebugger print $
   autocmd FileType javascript,coffee iabbrev adebugger debugger
   autocmd FileType ruby iabbrev adebugger byebug
+  autocmd FileType python iabbrev adebugger print("bar: %s" % (bar))
+
+  " insert sleep
+  autocmd FileType python iabbrev asleep import time; time.sleep(22)
+
+  " insert exception
+  autocmd FileType python iabbrev aexcept raise Exception("foo")
+
+
+  " insert template tag
+  autocmd FileType htmldjango iabbrev pecho {{ foo }}
+
+  " insert new function
+  au FileType rust iabbrev afn fn foo() -> u32 {<CR>42<CR>}
 
   " logical operators
   " autocmd FileType text iabbrev adisj ∨
@@ -834,6 +862,29 @@ function! FormatComicListEntries()
   execute "silent! normal! gg^VG:call InsertEmptyLines()\<CR>"
 endfunction
 
-autocmd FileType comic nnoremap <silent> <leader>fc :call FormatComicListEntries()<CR>
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
+fun! FzfOmni()
+  let is_git = system('git status')
+  if v:shell_error
+    :Files
+  else
+    :GFiles --exclude-standard --others --cached
+  endif
+endfun
 
+silent! nnoremap <C-P> :call FzfOmni()<CR>
