@@ -28,6 +28,7 @@ alias card='cat README*'
 alias c='clear'
 alias clera='clear'
 alias clar='clear'
+alias cler='clear'
 alias cddf='cd ~/bin/dotfiles/'
 alias cdw='cd /var/www'
 alias cdd='cd ~/Desktop'
@@ -229,6 +230,7 @@ alias vwi='vim'
 alias vym='vim'
 alias vimnone='vim -u NONE'
 alias vimmake='vim -u NONE Makefile'
+alias vim-update-plugins="vim +'PlugInstall --sync' +qa"
 alias vundle_install='vim +BundleInstall +qall'
 alias vundle_update='vim +BundleUpdate +qall'
 alias vundle_clean='vim +BundleClean +qall'
@@ -443,6 +445,7 @@ function reduce-brightness {
   local NEW_BRIGHTNESS=$(($OLD_BRIGHTNESS / 2))
   echo $NEW_BRIGHTNESS > $BRIGHTNESS_DEVICE
 }
+alias decrease-brightness=reduce-brightness
 
 function increase-brightness {
   local MAX_BRIGHTNESS=4437
