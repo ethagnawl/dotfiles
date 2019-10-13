@@ -87,13 +87,10 @@ bindsym $mod+u fullscreen toggle
 bindsym $mod+o layout stacking
 bindsym $mod+comma layout tabbed
 bindsym $mod+period layout toggle split
+bindsym $mod+q layout toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# bindsym $mod+Shift+x --release sticky enable
-# bindsym $mod+Shift+y --release sticky disable
-# bindsym $mod+Shift+z --release sticky disable
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -115,6 +112,10 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+
+# scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+plus scratchpad show
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -148,12 +149,6 @@ mode "resize" {
         bindsym n resize shrink height 10 px or 10 ppt
         bindsym s resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -168,9 +163,13 @@ bar {
   colors {
     statusline #AAAAAA
     background #333333
-    focused_workspace #333333 #333333 #FFFFFF
-    inactive_workspace #333333 #333333 #666666
+    focused_workspace #282828 #282828 #FFFFFF #ffffff
+    inactive_workspace #333333 #333333 #AAAAAA #aea79f
+    separator #ffffff
+    active_workspace #aea79f #aea79f #3c3b37 #928374
+    urgent_workspace #FF0000 #FF0000 #ffffff #ebdbb2
   }
+  font pango:ubuntu monospace 8
 }
 
 # Pulse Audio controls
@@ -178,15 +177,16 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set 'Master' 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set 'Master' 5%-
 bindsym XF86AudioMute exec --no-startup-id amixer set 'Master' toggle
 
-# Sreen brightness controls
+# Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 #                       border  backgr. text    indicator child_border
 client.background       #333333
-client.focused          #000000 #000000 #000000 #333333   #333333
-client.focused_inactive #222222 #222222 #222222 #222222   #222222
-client.unfocused        #222222 #222222 #222222 #222222   #222222
+client.focused          #000000 #000000 #FFFFFF #000000
+client.focused_inactive #333333 #333333 #FFFFFF #000000
+client.unfocused        #333333 #333333 #FFFFFF #333333
+client.urgent           #FF0000 #FF0000 #ffffff #FF0000
 
 # always move firefox instances to workspace 1
 # for_window [class="^Firefox$"] move container to workspace 1
@@ -203,3 +203,8 @@ exec --no-startup-id xautolock -time 11 -locker "slock"
 for_window [class="Keepassx"] floating enable
 
 hide_edge_borders smart
+
+# automatically start dropbox daemon
+exec_always ~/dropboxd
+
+workspace_auto_back_and_forth yes
