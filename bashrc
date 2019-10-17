@@ -126,6 +126,7 @@ set -o vi
 
 alias g='git'
 export PATH=$HOME/local/bin:$PATH
+export PATH=$HOME/dotfiles/scripts:$PATH
 
 # avoid duplicates..
 export HISTCONTROL=ignoredups:erasedups
