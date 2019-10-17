@@ -150,7 +150,11 @@ function gamend {
 }
 
 function gco {
+  if [ $# == 0 ]; then
+    git checkout .
+  else
     git checkout "$*"
+  fi
 }
 
 function gri {
