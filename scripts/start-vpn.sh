@@ -11,4 +11,4 @@ if [ ! -f $OPEN_VPN_CONFIG ]; then
 fi
 
 sudo apt install openvpn resolvconf
-sudo openvpn $OPEN_VPN_CONFIG
+sudo openvpn --config $OPEN_VPN_CONFIG --writepid /run/openvpn.pid
