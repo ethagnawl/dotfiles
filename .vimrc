@@ -913,12 +913,14 @@ function! InsertEmptyLines()
   silent g/.\n\n\@!/norm o
 endfunction
 
+" comic helpers
 function! FormatComicListEntries()
   execute "silent! normal! gg^VG:sort\<CR>"
   execute "silent! normal! gg^VG:call InsertHyphensAndUnderscores()\<CR>"
   execute "silent! normal! gg^VG:call InsertEmptyLines()\<CR>"
 endfunction
 
+autocmd BufNewFile,BufRead *.comic nnoremap <silent> <leader>fc :call FormatComicListEntries()<CR>
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
