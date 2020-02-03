@@ -225,16 +225,6 @@ set smartcase                   " ... unless they contain at least one capital l
 " remove trailing whitespace
 au BufWritePre * :%s/\s\+$//e
 
-" disable arrow keys
-" noremap  <Up> ""
-" noremap! <Up> <Esc>
-" noremap  <Down> ""
-" noremap! <Down> <Esc>
-" noremap  <Left> ""
-" noremap! <Left> <Esc>
-" noremap  <Right> ""
-" noremap! <Right> <Esc>
-
 " turn off swap files
 set noswapfile
 set nobackup
