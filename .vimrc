@@ -340,6 +340,8 @@ noremap <leader>af :Autoformat<CR><CR>
 let g:formatdef_elmformat = '"elm-format --stdin --yes"'
 let g:formatters_elm = ['elmformat']
 
+let g:formatters_python = ['black']
+
 
 " colorscheme config
 " map \cscheme to :ShowColourSchemeName
