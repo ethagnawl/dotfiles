@@ -562,7 +562,7 @@ function! AddSemicolonToLineEnd()
 endfunction
 
 nmap <leader>as <plug>(AddSemicolonToLineEnd)
-nnoremap <plug>(AddSemicolonToLineEnd) :call AddSemicolonToLineEnd()<cr>
+nnoremap <silent><plug>(AddSemicolonToLineEnd) :call AddSemicolonToLineEnd()<cr>
 
 " add comma to end of line
 function! AddCommaToLineEnd()
@@ -571,14 +571,25 @@ function! AddCommaToLineEnd()
 endfunction
 
 nmap <leader>ac <plug>(AddCommaToLineEnd)
-nnoremap <plug>(AddCommaToLineEnd) :call AddCommaToLineEnd()<cr>
+nnoremap <silent><plug>(AddCommaToLineEnd) :call AddCommaToLineEnd()<cr>
+
+" add comma to beginning of line
+function! AddCommaToLineBegin()
+  execute "normal! mqI, \<esc>`q"
+  silent! call repeat#set("\<plug>(AddCommaToLineBegin)")
+endfunction
+
+nmap <leader>ic <plug>(AddCommaToLineBegin)
+nnoremap <silent><plug>(AddCommaToLineBegin) :call AddCommaToLineBegin()<cr>
+
 
 " add deriving (Eq, Show) to end of line
+" TODO: only map in haskell-ish files
 function! AddDerivingToLineEnd()
   execute "normal! mqA deriving (Eq, Show)\<esc>`q"
 endfunction
 
-nnoremap <leader>ads :call AddDerivingToLineEnd()<cr>
+nnoremap <silent><leader>ads :call AddDerivingToLineEnd()<cr>
 
 
 "" enable mouse selection inside vim - as opposed to the terminal
