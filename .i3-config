@@ -183,8 +183,11 @@ exec --no-startup-id /usr/bin/compton --config ~/.config/compton.conf
 # startup applications
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace 4; exec spotify'
 exec --no-startup-id i3-msg 'workspace 3; exec slack'
 
+# always move firefox instances to workspace 1
+# for_window [class="^Firefox$"] move container to workspace 1
 
 exec --no-startup-id xautolock -time 8 -locker "i3lock -n -c bada55"
 
