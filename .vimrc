@@ -162,6 +162,9 @@ call plug#end()
 packadd! matchit
 " packadd termdebug
 
+" HowMuch config
+" let g:HowMuch_auto_engines = ['vim']
+
 syntax on
 filetype plugin indent on
 set number
