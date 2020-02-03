@@ -921,6 +921,12 @@ function! FormatComicListEntries()
 endfunction
 
 autocmd BufNewFile,BufRead *.comic nnoremap <silent> <leader>fc :call FormatComicListEntries()<CR>
+
+
+" https://stackoverflow.com/a/19819036/382982
+let $BASH_ENV="~/dotfiles/bash/aliases"
+
+
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
