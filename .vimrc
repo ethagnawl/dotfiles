@@ -669,22 +669,64 @@ nmap <Leader>j :call GotoJump()<CR>
   nmap Q @q
 
 " abbreviations
+  " TODO: :autocmd Filetype text  source ~/.vim/abbrevs.vim
 
-  au FileType sh iabbrev askeleton #!/usr/bin/env bash<CR><CR>set -euo pipefail<CR>IFS=$'\n\t<CR>
+  iabbrev afence ```<CR>```
+  iabbrev asweatysmile 😅
+  iabbrev amonad 🌯
 
-  autocmd FileType c iabbrev askeleton #include <stdlib.h><CR>#include <stdio.h><CR>#include <stdbool.h><CR><CR>int main() {<CR>printf("k\n");<CR>return 0;<CR>}
+  autocmd FileType c iabbrev askeleton #include <stdlib.h>
+                                       \<CR>
+                                       \#include <stdio.h>
+                                       \<CR>
+                                       \#include <stdbool.h>
+                                       \<CR>
+                                       \<CR>
+                                       \int main() {
+                                       \<CR>
+                                       \printf("r\n");
+                                       \<CR>
+                                       \return 0;
+                                       \<CR>
+                                       \}
+
+  autocmd FileType rust iabbrev askeleton fn main() {
+                                          \<CR>
+                                          \println!("hello world!");
+                                          \<CR>
+                                          \}
+
+  autocmd FileType sh iabbrev askeleton #!/usr/bin/env bash
+                                        \<CR>
+                                        \<CR>
+                                        \set -euo pipefail
+                                        \<CR>
+                                        \IFS=$'\n\t'
+                                        \<CR>
+
+  autocmd FileType rust iabbrev aprint println!("debug: {:#?}", debug);
+  autocmd FileType python iabbrev aprint print("bar: %s" % (bar))
+  autocmd FileType javascript,coffee iabbrev aprint console.log('foo', bar)
+
   autocmd FileType c iabbrev aprintf printf("hi\n");
   autocmd FileType c iabbrev afor for (i; i < length; i += 1) {<CR>}
+
+  autocmd FileType sh iabbrev awhile while :<CR>do<CR>echo hi<CR>done
 
   autocmd FileType javascript,c iabbrev aif if () {<CR>} else if () {<CR>} else {<CR>}
 
   autocmd FileType css,sass,scss,stylesheet iabbrev afbleed bottom: 0;<CR>left: 0;<CR>position: absolute;<CR>right: 0;<CR>top: 0;
 
+  autocmd FileType python iabbrev atry try:<CR>#<CR>except Exception as e:<CR>print(e)
+  autocmd FileType python iabbrev aassert expected = False<CR>actual = True<CR>assert expected == actual
   autocmd FileType ruby iabbrev aassert expected = false<CR>actual = true<CR>assert_equal(expected, actual)
   autocmd FileType ruby iabbrev arescue begin<CR>rescue Exception => e<CR>byebug
   autocmd FileType ruby iabbrev atest test "" do<CR>
+  autocmd FileType ruby iabbrev afn ->(foo) { puts foo }
+  autocmd FileType ruby iabbrev aif if true<CR>else<CR>end
 
   " insert debugger
+  autocmd FileType c iabbrev adebugger printf("%s\n", x);
   autocmd FileType c iabbrev adebugger printf("%s\n", x);
   autocmd FileType clojure,clojurescript iabbrev adebugger (prn 0)
   autocmd FileType css,sass,scss,stylesheet iabbrev adebugger color: #bada55;
@@ -692,10 +734,12 @@ nmap <Leader>j :call GotoJump()<CR>
   autocmd FileType haskell iabbrev adebugger print $
   autocmd FileType javascript,coffee iabbrev adebugger debugger
   autocmd FileType ruby iabbrev adebugger byebug
-  autocmd FileType python iabbrev adebugger print("bar: %s" % (bar))
+  autocmd FileType python iabbrev adebugger import code; code.interact(local=dict(globals(), **locals())) # noqa
 
   " insert sleep
+  autocmd FileType rust iabbrev asleep use std::{thread, time};<CR>thread::sleep(time::Duration::from_secs(5));
   autocmd FileType python iabbrev asleep import time; time.sleep(22)
+  autocmd FileType javascript iabbrev asleep setTimeout(function () {}, 1)
 
   " insert exception
   autocmd FileType python iabbrev aexcept raise Exception("foo")
@@ -706,6 +750,7 @@ nmap <Leader>j :call GotoJump()<CR>
 
   " insert new function
   au FileType rust iabbrev afn fn foo() -> u32 {<CR>42<CR>}
+  au FileType javascript iabbrev function foo() {<CR>}
 
   " logical operators
   " autocmd FileType text iabbrev adisj ∨
