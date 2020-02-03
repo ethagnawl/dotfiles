@@ -174,17 +174,18 @@ set encoding=utf-8
 set colorcolumn=80
 let g:smart_display_opts = { 'column' : 80 }
 
-"" rust
+" rust
 let g:rustfmt_autosave = 1
 
 " casetrate
 let g:casetrate_leader = '\c'
 
+set hidden                    " prevent errors when using argdo/bufdo
 set ruler
-set showmatch
-set smartcase
 set scrolloff=5               " keep at least 5 lines above/below
+set showmatch
 set sidescrolloff=5           " keep at least 5 lines left/right
+set smartcase
 
 " Who doesn't like autoindent?
 set autoindent
@@ -202,8 +203,13 @@ set smarttab
 " Add _ as a word separator
 ":set iskeyword-=_
 
-" W aliases w
+" aliases for q/x/w fat finger
 command! W w
+command! Wa wa
+command! Xa xa
+" command! X x -- why won't this work?
+" command! qA qa
+
 set lisp
 
 " Who wants an 8 character tab?  Not me!
@@ -279,6 +285,7 @@ set vb t_vb=".
 " map ^C-c to escape, ^C-c works most of the time,
 " but doesn't trigger the InsertLeave event
 inoremap <C-c> <Esc>
+
 
 " kill search highlights with ^C-c
 nnoremap <silent> <C-c> :nohl<cr><Esc>
@@ -375,24 +382,6 @@ if filereadable(expand("$HOME/.vim/plugged/" . myColorscheme . ".vim/colors/" . 
   let command = 'colorscheme ' . myColorscheme
   execute command
 endif
-
-
-" Control-P config
-" let g:ctrlp_by_filename = 0
-" let g:ctrlp_custom_ignore = {
-"   \ 'file': '\v\.(pyc)$',
-"   \ 'dir': 'build_env\|tmp\|elm-stuff\|node_modules\|DS_Store\|\.git\|target\|www\|cache\|_site\|.stack-work\|sitepackages\|storage\|.storage',
-"   \}
-" let g:ctrlp_map = '<c-p>'
-" let g:ctrlp_match_window_bottom = 0
-" let g:ctrlp_match_window_reversed = 0
-" let g:ctrlp_show_hidden = 1
-" let g:ctrlp_switch_buffer = 0
-" let g:ctrlp_working_path_mode = 0
-
-" vim-pasta config
-" https://github.com/ctrlpvim/ctrlp.vim/issues/447
-" let g:pasta_disabled_filetypes = ['ctrlp']
 
 
 " vim slime config
