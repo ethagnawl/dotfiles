@@ -129,7 +129,7 @@ export PATH=$HOME/local/bin:$PATH
 export PATH=$HOME/dotfiles/scripts:$PATH
 
 # avoid duplicates..
-export HISTCONTROL=ignoredups:erasedups
+export HISTCONTROL=ignoreboth:erasedups
 # append history entries..
 shopt -s histappend
 
