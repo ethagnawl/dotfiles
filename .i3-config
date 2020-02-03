@@ -201,4 +201,6 @@ exec_always ~/dropboxd
 
 # automatically start bluetooth service
 # exec_always blueman-applet
+
+# use SUPER+I to flip back and forth between two workspaces
 workspace_auto_back_and_forth yes
