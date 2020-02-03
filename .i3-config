@@ -36,7 +36,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-bindsym $mod+l --release exec slock
+bindsym $mod+l --release exec i3lock -n -c bada55
 bindsym $mod+Print --release exec ~/dotfiles/scripts/screenshot.sh
 
 
@@ -163,9 +163,9 @@ bar {
   colors {
     statusline #AAAAAA
     background #333333
+    separator #3c3b37
     focused_workspace #282828 #282828 #FFFFFF #ffffff
     inactive_workspace #333333 #333333 #AAAAAA #aea79f
-    separator #ffffff
     active_workspace #aea79f #aea79f #3c3b37 #928374
     urgent_workspace #FF0000 #FF0000 #ffffff #ebdbb2
   }
@@ -197,7 +197,7 @@ exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal'
 exec --no-startup-id i3-msg 'workspace 3; exec slack'
 
 
-exec --no-startup-id xautolock -time 11 -locker "slock"
+exec --no-startup-id xautolock -time 8 -locker "i3lock -n -c bada55"
 
 # always start in floating mode
 for_window [class="Keepassx"] floating enable
