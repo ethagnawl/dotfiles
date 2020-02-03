@@ -176,8 +176,9 @@ client.focused_inactive #333333 #333333 #FFFFFF #000000
 client.unfocused        #333333 #333333 #FFFFFF #333333
 client.urgent           #FF0000 #FF0000 #ffffff #FF0000
 
-# always move firefox instances to workspace 1
-# for_window [class="^Firefox$"] move container to workspace 1
+
+# compton
+exec --no-startup-id /usr/bin/compton --config ~/.config/compton.conf
 
 # startup applications
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
