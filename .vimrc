@@ -544,6 +544,15 @@ set synmaxcol=200
 " change in next parens - cin(
 onoremap in( :<c-u>normal! f(vi(<cr>
 
+" add noqa to end of line
+function! AddNoQaToLineEnd()
+  " mq => `q creates/moves to mark q
+  execute "normal! mqA # noqa\<esc>`q"
+  silent! call repeat#set("\<plug>(AddNoQaToLineEnd)")
+endfunction
+
+nmap <leader>anqa <plug>(AddNoQaToLineEnd)
+nnoremap <silent><plug>(AddNoQaToLineEnd) :call AddNoQaToLineEnd()<cr>
 
 " add semicolon to end of line
 function! AddSemicolonToLineEnd()
