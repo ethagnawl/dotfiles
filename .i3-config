@@ -166,8 +166,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer set 'Master' 5%-
 bindsym XF86AudioMute exec --no-startup-id amixer set 'Master' toggle
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 #                       border  backgr. text    indicator child_border
 client.background       #333333
