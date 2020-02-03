@@ -14,105 +14,99 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" FZF
+" " FZF
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 
-" colorscheme plugins
-Plug 'Haron-Prime/evening_vim'
+" " colorscheme plugins
 Plug 'junegunn/seoul256.vim'
-" Plug 'xolox/vim-colorscheme-switcher'
-" Plug 'kamwitsta/flatwhite-vim'
+" Plug 'Haron-Prime/evening_vim'
 
-" Python plugins
-Plug 'nvie/vim-flake8', {'for': 'python'}
-Plug 'vim-python/python-syntax', {'for': 'python'}
-Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
+" " Docker
+Plug 'ekalinin/Dockerfile.vim'
 
-" clojure plugins
-Plug 'guns/vim-clojure-static'
-Plug 'tpope/vim-leiningen'
-" Plug 'tpope/vim-fireplace'
-" Plug 'venantius/vim-eastwood'
+" " Python plugins
+Plug 'nvie/vim-flake8'
+Plug 'vim-python/python-syntax'
+Plug 'Vimjas/vim-python-pep8-indent'
 
-" java plugins
-Plug 'tpope/vim-classpath'
+" " clojure plugins
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'tpope/vim-leiningen', {'for': 'clojure'}
 
-" javascript plugins
-Plug 'einars/js-beautify'
-Plug 'itspriddle/vim-jquery'
-Plug 'kchmck/vim-coffee-script'
-Plug 'maksimr/vim-jsbeautify'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
-Plug 'tpope/vim-jdaddy'
+" " java plugins
+" Plug 'tpope/vim-classpath'
 
-" kotlin plugins
-Plug 'udalov/kotlin-vim'
+" " javascript plugins
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'einars/js-beautify', { 'for': 'javascript' } " requires external dependency
+" Plug 'itspriddle/vim-jquery'
+" Plug 'kchmck/vim-coffee-script'
+" Plug 'maksimr/vim-jsbeautify'
+" Plug 'mustache/vim-mustache-handlebars'
+" Plug 'mxw/vim-jsx'
+" Plug 'tpope/vim-jdaddy'
 
-" ruby plugins
-Plug 'tpope/vim-endwise'
+" " kotlin plugins
+Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
+
+" " ruby plugins
+Plug 'tpope/vim-cucumber', {'for': ['ruby', 'cucumber']}
+Plug 'tpope/vim-endwise', {'for': 'ruby'}
 Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 
-" html plugins
-Plug 'digitaltoad/vim-jade'
-Plug 'mattn/emmet-vim'
+" " html plugins
 Plug 'othree/html5.vim'
-Plug 'tpope/vim-haml'
+" Plug 'digitaltoad/vim-jade'
+" Plug 'mattn/emmet-vim'
+" Plug 'tpope/vim-haml'
 
-" css plugins
+" " css plugins
 Plug 'ap/vim-css-color'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'groenewege/vim-less'
-Plug 'wavded/vim-stylus'
+" Plug 'cakebaker/scss-syntax.vim'
+" Plug 'groenewege/vim-less'
+" Plug 'wavded/vim-stylus'
 
-" markdown plugins
-Plug 'plasticboy/vim-markdown'
+" " markdown plugins
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 
-" haskell plugins
-Plug 'eagletmt/ghcmod-vim'
-Plug 'Shougo/vimproc.vim'
-Plug 'urso/haskell_syntax.vim'
+" " haskell plugins
+Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
+Plug 'Shougo/vimproc.vim', {'for': 'haskell'}
+Plug 'urso/haskell_syntax.vim', {'for': 'haskell'}
 
-" Elm plugins
-Plug 'elmcast/elm-vim'
+" " Elm plugins
+Plug 'elmcast/elm-vim', {'for': 'elm'}
 
-" git plugins
-Plug 'mattn/webapi-vim'
-Plug 'mattn/gist-vim'
+" " git plugins
 Plug 'tpope/vim-fugitive'
-Plug 'mattn/webapi-vim'
+" Plug 'mattn/webapi-vim'
+" Plug 'mattn/gist-vim'
+" Plug 'mattn/webapi-vim'
 
-" tmux plugins
-" autocomplete from tmux with <C-X><C-U>
-Plug 'wellle/tmux-complete.vim'
+" " crystal plugins
+Plug 'rhysd/vim-crystal', {'for': 'crystal'}
 
-" crystal plugins
-Plug 'rhysd/vim-crystal'
+" " C plugins
+" " Plug 'WolfgangMehner/c-support'
 
-" C plugins
-" Plug 'WolfgangMehner/c-support'
+" " Rust plugins
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
-" Rust plugins
-Plug 'rust-lang/rust.vim'
+" " lisp plugins
+Plug 'wlangstroth/vim-racket', {'for': 'scheme'}
 
-" lisp plugins
-Plug 'wlangstroth/vim-racket'
-
-" misc plugins
-Plug 'Chiel92/vim-autoformat'
-Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'FooSoft/vim-argwrap'
-Plug 'Matt-Deacalion/vim-systemd-syntax'
+" " misc plugins
 Plug 'bling/vim-airline'
 Plug 'calebsmith/vim-lambdify'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Chiel92/vim-autoformat'
+Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 Plug 'ethagnawl/vim-surround'
+Plug 'FooSoft/vim-argwrap'
 Plug 'godlygeek/tabular'
 Plug 'idanarye/vim-casetrate'
 Plug 'jpalardy/vim-slime'
@@ -120,39 +114,53 @@ Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-user'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'paradigm/TextObjectify'
 Plug 'scrooloose/syntastic'
+Plug 'shime/vim-livedown'
 Plug 'sickill/vim-pasta'
-Plug 'sk1418/HowMuch'
-Plug 'skywind3000/asyncrun.vim'
 Plug 'svermeulen/vim-extended-ft'
-Plug 'terryma/vim-expand-region'
+Plug 'TaDaa/vimade'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'triglav/vim-visual-increment'
-Plug 'vim-scripts/LargeFile'
+Plug 'vim-scripts/camelcasemotion'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'vim-scripts/SmartColumnColor'
-Plug 'vim-scripts/camelcasemotion'
-Plug 'vim-scripts/matchit.zip'
-Plug 'vim-scripts/vim-do'
-Plug 'xolox/vim-misc'
+
 " Plug 'junegunn/vim-peekaboo'
+" Plug 'kamwitsta/flatwhite-vim'
 " Plug 'lambdalisue/vim-pyenv'
+" Plug 'lambdalisue/vital-Whisky'
+" Plug 'Matt-Deacalion/vim-systemd-syntax'
+" Plug 'mileszs/ack.vim'
+" Plug 'peterhoeg/vim-qml'
+" Plug 'sk1418/HowMuch'
+" Plug 'skywind3000/asyncrun.vim'
 " Plug 'spolu/dwm.vim'
+" Plug 'terryma/vim-expand-region'
+" Plug 'tpope/vim-dadbod'
+" Plug 'tpope/vim-fireplace'
+" Plug 'venantius/vim-eastwood'
+" Plug 'vim-jp/vital.vim'
+" Plug 'vim-scripts/LargeFile'
 " Plug 'vim-scripts/Markology'
+" Plug 'vim-scripts/vim-do'
 " Plug 'vim-scripts/ZoomWin'
+" Plug 'wellle/tmux-complete.vim'
+" Plug 'xolox/vim-colorscheme-switcher'
+" Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-reload'
 
-let g:HowMuch_auto_engines = ['vim']
-
 call plug#end()
+
+" default plugins
+packadd! matchit
+" packadd termdebug
 
 syntax on
 filetype plugin indent on
