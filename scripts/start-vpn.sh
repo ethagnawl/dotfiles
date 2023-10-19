@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # TODO: figure out a way to download config or add to dotfiles
-OPEN_VPN_CONFIG="$HOME/.config/protonvpn/ch.protonvpn.com.udp.ovpn"
+OPEN_VPN_CONFIG="$HOME/.config/protonvpn/node-us-69.protonvpn.net.udp.ovpn"
 
 if [ ! -f $OPEN_VPN_CONFIG ]; then
   echo "OPEN_VPN_CONFIG ($OPEN_VPN_CONFIG) not found." >&2

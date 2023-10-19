@@ -76,6 +76,7 @@ function countfs {
 }
 
 # sum size of files in . -r (MB)
+alias dush='du -hs * | sort -h'
 alias cdsize='du -ch | grep total'
 alias lsmb='ls -lh -S'
 
@@ -101,6 +102,16 @@ function fifvw {
 
 function fifpa {
     grep -RnisI -A 3 -B 3 "$*" *
+}
+
+function grepa {
+    grep -RnisI -A 3 -B 3 "$*" *
+}
+
+function grepac {
+    file="$1"
+    count="$2"
+    grep -RnisI -A $count -B $count "${@:3}" "$file"
 }
 
 # https://stackoverflow.com/questions/16292750/use-output-of-two-greps-with-diff
@@ -248,6 +259,7 @@ alias gs='git status'
 alias gpom='git push origin master'
 alias gcom='git checkout master || git checkout main || git checkout development'
 alias gb='git branch'
+alias gbbd="git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'"
 alias gr='git remote'
 alias gbr='git branch -r'
 alias gsl='git stash list'
@@ -304,7 +316,7 @@ alias fs='foreman start'
 
 function scd {
   local port=$1 || 8000
-  python -m SimpleHTTPServer $port
+  python3 -m http.server $port
 }
 
 function ngrok-serve {
@@ -363,9 +375,11 @@ alias update-and-upgrade="sudo apt update && sudo apt dist-upgrade && sudo apt a
 alias run-security-sweep="cd && sudo chkrootkit"
 
 # Docker Compose
+alias docker-compose='docker compose'
 alias dcb='docker-compose build'
 alias dcbup='docker-compose build && docker-compose up'
 alias dcd='docker-compose down'
+alias dck='docker-compose kill'
 alias cdc='docker-compose down'
 alias dcdv='docker-compose down -v'
 alias dcs='docker-compose stop'
@@ -444,6 +458,10 @@ function get-local-ip {
   ip addr show scope global | grep inet | cut -d' ' -f6 | cut -d/ -f1
 }
 
+function get-remote-ip {
+  curl ifconfig.co/
+}
+
 function ts {
   args=$@
   tmux send-keys -t right "$args" C-m
@@ -470,3 +488,170 @@ function increase-brightness {
     echo $MAYBE_NEW_BRIGHTNESS > $BRIGHTNESS_DEVICE
   fi
 }
+
+### Select a docker container to start and attach to
+##function da() {
+##  local cid
+##  cid=$(docker ps -a | sed 1d | fzf -1 -q "$1" | awk '{print $1}')
+##
+##  [ -n "$cid" ] && docker start "$cid" && docker attach "$cid"
+##}
+##
+### Select a running docker container to stop
+##function ds() {
+##  local cid
+##  cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
+##
+##  [ -n "$cid" ] && docker stop "$cid"
+##}
+##
+### Same as above, but allows multi selection:
+##function drm() {
+##  docker ps -a | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $1 }' | xargs -r docker rm
+##}
+##
+### Select a docker image or images to remove
+##function drmi() {
+##  docker images | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $3 }' | xargs -r docker rmi
+##}
+##
+### fbr - checkout git branch
+##fbr() {
+##  local branches branch
+##  branches=$(git --no-pager branch -vv) &&
+##  branch=$(echo "$branches" | fzf +m) &&
+##  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+##}
+##
+### fbr - checkout git branch (including remote branches)
+##fbr() {
+##  local branches branch
+##  branches=$(git branch --all | grep -v HEAD) &&
+##  branch=$(echo "$branches" |
+##           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+##  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+##}
+##
+### fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
+##fbr() {
+##  local branches branch
+##  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+##  branch=$(echo "$branches" |
+##           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+##  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+##}
+##
+### fco - checkout git branch/tag
+##fco() {
+##  local tags branches target
+##  branches=$(
+##    git --no-pager branch --all \
+##      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
+##    | sed '/^$/d') || return
+##  tags=$(
+##    git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
+##  target=$(
+##    (echo "$branches"; echo "$tags") |
+##    fzf --no-hscroll --no-multi -n 2 \
+##        --ansi) || return
+##  git checkout $(awk '{print $2}' <<<"$target" )
+##}
+##
+##
+### fco_preview - checkout git branch/tag, with a preview showing the commits between the tag/branch and HEAD
+##fco_preview() {
+##  local tags branches target
+##  branches=$(
+##    git --no-pager branch --all \
+##      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
+##    | sed '/^$/d') || return
+##  tags=$(
+##    git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
+##  target=$(
+##    (echo "$branches"; echo "$tags") |
+##    fzf --no-hscroll --no-multi -n 2 \
+##        --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{2}'") || return
+##  git checkout $(awk '{print $2}' <<<"$target" )
+##}
+##
+##
+###fbr() {
+###  local branches branch
+###  branches=$(git --no-pager branch -vv) &&
+###  branch=$(echo "$branches" | fzf +m) &&
+###  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+###}
+##
+##fbr() {
+##  local branches branch
+##  branches=$(git branch --all | grep -v HEAD) &&
+##  branch=$(echo "$branches" |
+##           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+##  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+##}
+##
+##tm() {
+##  [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
+##  if [ $1 ]; then
+##    tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
+##  fi
+##  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
+##}
+##
+##ftpane() {
+##  local panes current_window current_pane target target_window target_pane
+##  panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
+##  current_pane=$(tmux display-message -p '#I:#P')
+##  current_window=$(tmux display-message -p '#I')
+##
+##  target=$(echo "$panes" | grep -v "$current_pane" | fzf +m --reverse) || return
+##
+##  target_window=$(echo $target | awk 'BEGIN{FS=":|-"} {print$1}')
+##  target_pane=$(echo $target | awk 'BEGIN{FS=":|-"} {print$2}' | cut -c 1)
+##
+##  if [[ $current_window -eq $target_window ]]; then
+##    tmux select-pane -t ${target_window}.${target_pane}
+##  else
+##    tmux select-pane -t ${target_window}.${target_pane} &&
+##    tmux select-window -t $target_window
+##  fi
+##}
+##
+### fkill - kill processes - list only the ones you can kill. Modified the earlier script.
+##fkill() {
+##    local pid
+##    if [ "$UID" != "0" ]; then
+##        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+##    else
+##        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+##    fi
+##
+##    if [ "x$pid" != "x" ]
+##    then
+##        echo $pid | xargs kill -${1:-9}
+##    fi
+##}
+##
+#### re-wrote the script above
+###bind '"\C-r": "\C-x1\e^\er"'
+###bind -x '"\C-x1": __fzf_history';
+###
+###__fzf_history ()
+###{
+###__ehc $(history | fzf --tac --tiebreak=index | perl -ne 'm/^\s*([0-9]+)/ and print "!$1"')
+###}
+###
+###__ehc()
+###{
+###if
+###        [[ -n $1 ]]
+###then
+###        bind '"\er": redraw-current-line'
+###        bind '"\e^": magic-space'
+###        READLINE_LINE=${READLINE_LINE:+${READLINE_LINE:0:READLINE_POINT}}${1}${READLINE_LINE:+${READLINE_LINE:READLINE_POINT}}
+###        READLINE_POINT=$(( READLINE_POINT + ${#1} ))
+###else
+###        bind '"\er":'
+###        bind '"\e^":'
+###fi
+###}

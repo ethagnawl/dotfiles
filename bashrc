@@ -136,7 +136,8 @@ shopt -s histappend
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
+export TERM=tmux-256color
 #export PATH=/usr/local/bin:$PATH
 
 ##
@@ -154,8 +155,43 @@ export PATH="$PATH:/snap/bin"
 
 source ~/.nvm/nvm.sh
 
+# export PATH="$HOME/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+
 # export HISTSIZE=10000
 
 # export HISTFILESIZE=10000
 
 source ~/.bin/tmuxinator.bash
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export GOPATH=$HOME/work
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+complete -D -o default
+
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/peter/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/peter/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/peter/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/peter/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.bin"
+. "$HOME/.cargo/env"
+
+# Created by `pipx` on 2023-08-21 16:55:21
+export PATH="$PATH:/home/peter/.local/bin"

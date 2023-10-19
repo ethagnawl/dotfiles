@@ -1,0 +1,14 @@
+[Unit]
+Description=Run Dropbox daemon as peter
+DefaultDependencies=no
+After=network.target
+
+[Service]
+Type=simple
+Group=peter
+User=peter
+ExecStart=/home/peter/.dropbox-dist/dropboxd
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target

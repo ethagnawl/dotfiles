@@ -33,10 +33,10 @@ git checkout tags/$VERSION -b $VERSION-branch
 # make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
 make VIMRUNTIMEDIR=/usr/local/share/vim/vim90
 
-sudo apt-get install -y checkinstall
+# sudo apt-get install -y checkinstall
 
-sudo dpkg -r vim
+# sudo dpkg -r vim
 
-sudo checkinstall
+# sudo checkinstall
 
-sudo apt-mark hold vim
+# sudo apt-mark hold vim
