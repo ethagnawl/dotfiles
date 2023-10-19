@@ -1,38 +1,42 @@
 #!/usr/bin/env bash
 
-# TODO: clone repository to home directory
-# TODO: more robust removal of potential vim/accessories (https://superuser.com/a/844627/140742)
-# TODO: sniff out appropriate interpreter paths (python)
-# TODO: sniff out/set appropriate version
-
 set -euo pipefail
 
-sudo apt-get install checkinstall
+# VERSION=v8.2.4290
+VERSION=v9.0.1392
 
-sudo apt-get remove -y vim || echo "vim not installed"
-sudo apt-get remove -y vim my-vim || echo "my-vim not installed"
+echo "Building and installing Vim $VERSION"
 
-git clone git@github.com:vim/vim.git ~/projects/vim || echo "repository already exists"
-cd ~/projects/vim
-git pull origin master
-
-sudo make distclean
-
+cd ~
+mkdir -p build-vim
+cd ~/build-vim
+sudo rm -rf vim
+git clone https://github.com/vim/vim.git
+cd vim
+git fetch --all --tags
+git checkout tags/$VERSION -b $VERSION-branch
 ./configure --with-features=huge \
             --enable-multibyte \
             --enable-rubyinterp=yes \
-            --enable-pythoninterp=yes \
-            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
             --enable-python3interp=yes \
-            --with-python3-config-dir=/usr/lib/python3.7/config-3.7m-x86_64-linux-gnu \
             --enable-perlinterp=yes \
             --enable-luainterp=yes \
-            --enable-gui=gtk2 \
+            --enable-gui=auto \
+            --enable-gtk2-check \
+            --enable-gtk3-check \
+            --enable-gnome-check \
+            --with-x \
             --enable-cscope \
-            --prefix=/usr/local
+            --prefix=/home/peter/.bin
+            # --prefix=/usr/local
 
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
+# make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
+make VIMRUNTIMEDIR=/usr/local/share/vim/vim90
 
-sudo checkinstall -y --pkgname=my-vim
+sudo apt-get install -y checkinstall
+
+sudo dpkg -r vim
+
+sudo checkinstall
+
 sudo apt-mark hold vim
-sudo vim --cmd 'helptags $VIMRUNTIME/doc' --cmd 'qall' # generate help tags
