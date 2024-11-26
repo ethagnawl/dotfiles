@@ -18,6 +18,7 @@ alias nh='nautilus .'
 alias fh='open .'
 alias gtest='ping google.com'
 
+alias esshc='vim ~/.ssh/config'
 alias ebashrc='vim ~/.bashrc'
 alias sbashrc='source ~/.bashrc'
 
